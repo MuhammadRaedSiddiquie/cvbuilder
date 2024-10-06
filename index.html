@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Cv Maker</title>
+</head>
+
+<body>
+
+    <main id="resumeBuild">
+        <div class="container">
+            <h1 class="heading-main">CUSTOM RESUME BUILDER</h1>
+
+            <form id="resumeData" action="javascript:resumeDisplay()">
+                <h1 class="heading-pic">Profile Picture:</h1>
+                <div class="image" id="imgView"></div>
+                <input type="file" id="imgFile" name="img" accept="image/*">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Full Name:</label>
+                    <input id="name" type="text" placeholder="Enter Your Name">
+                    <label for="address">Address:</label>
+                    <input id="address" type="text" placeholder="Address">
+                    <label for="phone">Phone Number:</label>
+                    <input id="phone" type="tel" placeholder="e,g:+9231234567678" maxlength="13"
+                        pattern="[+]{1}[9]{1}[2]{1}[0-9]{10}">
+                    <label for="email">Email Adress:</label>
+                    <input id="email" type="email" placeholder="Email Address" pattern=".+@gmail\.com" size="30">
+                    <label for="profile">About You:</label>
+                    <textarea id="profile" type="text" placeholder="Enter About Yourself" rows="3"
+                        maxlength="360"></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Education</legend>
+                    <div id="eduMain">
+                        <label for="degree">Degree:</label>
+                        <input id="degree" type="text" placeholder="Degree">
+                        <label for="college">School/Academy:</label>
+                        <input id="college" type="text" placeholder="School/Academy">
+                        <label for="sdate">Start Date:</label>
+                        <input id="sdate" type="date" placeholder="Start Date">
+                        <label for="edate">End Date:</label>
+                        <input id="edate" type="date" placeholder="End Date" style="margin-bottom: 50px;">
+                    </div>
+                    <div id="eduMain2">
+                        <label for="degree2">Degree:</label>
+                        <input id="degree2" type="text" placeholder="Degree">
+                        <label for="college2">School/Academy:</label>
+                        <input id="college2" type="text" placeholder="School/Academy">
+                        <label for="sdate2">Start Date:</label>
+                        <input id="sdate2" type="date" placeholder="Start Date">
+                        <label for="edate2">End Date:</label>
+                        <input id="edate2" type="date" placeholder="End Date" style="margin-bottom: 50px;">
+                    </div>
+                    <div id="eduButton" class="skill-btn" onclick="addEducation()">Add Education</div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>WORK EXPERIENCE</legend>
+                    <label for="job">Job Title:</label>
+                    <input id="job" type="text" placeholder="Job Title">
+                    <label for="company">Company Name:</label>
+                    <input id="company" type="text" placeholder="Company Name">
+                    <label for="from">From:</label>
+                    <input id="from" type="date" placeholder="">
+                    <label for="till">Till:</label>
+                    <input id="till" type="date" placeholder="">
+                    <div id="jobMain">
+                        <label for="job2">Job Title:</label>
+                        <input id="job2" type="text" placeholder="Job Title">
+                        <label for="company2">Company Name:</label>
+                        <input id="company2" type="text" placeholder="Company Name">
+                        <label for="from2">From:</label>
+                        <input id="from2" type="date" placeholder="">
+                        <label for="till2">Till:</label>
+                        <input id="till2" type="date" placeholder="">
+                    </div>
+                    <div id="jobButton" class="skill-btn" onclick="addjob()">Add Experience</div>
+
+
+                </fieldset>
+                <fieldset>
+                    <legend>SKILLS</legend>
+                    <div id="skillMain">
+                        <label for="skill">Skill:</label>
+                        <input class="skill" type="text" placeholder="Skill">
+                    </div>
+
+                    <div id="skillButton" class="skill-btn" onclick="addSkill()">Add Skill</div>
+                </fieldset>
+                <!-- <fieldset>
+                    <legend>LANGUAGES</legend>
+                    <label for="planguage">Primary Language:</label>
+                    <input id="planguage" type="text" placeholder="Enter Language">
+                    <select>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advance">Advance</option>
+                    </select><br>
+                    <label for="slanguage">Secondary Language:</label>
+                    <input id="slanguage" type="text" placeholder="Enter Language">
+                    <select>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advance">Advance</option>
+                    </select>
+                </fieldset> -->
+                <input type="submit" class="create-btn">
+            </form>
+        </div>
+    </main>
+    <div class="main2">
+        <div id="resumeOutput" class="resume-container">
+            <div class="header">
+                <div class="main-heading">
+                    <h1 id="usernameCv">RAED SIDDIQUI</h1>
+                    <!-- <p>FRESH INTERMEDIATE</p> -->
+                </div>
+                <div id="imgView2" class="image2">
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="left-column">
+                    <div class="contact">
+                        <div class="contacts"><span><i class="fa-solid fa-phone"></i></span>
+                            <p id="phoneCv">03352901485</p>
+                        </div>
+                        <div class="contacts"><span><i class="fa-solid fa-envelope"></i></span>
+                            <p id="emailCv">bhairaed636@gmail.com</p>
+                        </div>
+                        <div class="contacts"><span><i class="fa-solid fa-location-dot"></i></span>
+                            <p id="addressCv">R-1488 / Block 15, Dastagir society, Federal B. Area, Karachi.</p>
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <h2>SKILLS</h2>
+                        <ul id="skillCv">
+                        </ul>
+                    </div>
+                    <!-- <div id="LanguageCv" class="languages">
+                    <h2>LANGUAGES</h2>
+                    <div class="pri-lang">
+                        <h3>Primary Language:</h3>
+                        <ul>
+                            <li>Computer Proficiency</li>
+                            <li>Social Media Expert (SMM)</li>
+                        </ul>
+                    </div>
+                    <div class="sec-lang">
+                        <h3>Secondary Language:</h3>
+                        <ul>
+                            <li>Computer Proficiency</li>
+                            <li>Social Media Expert (SMM)</li>
+                        </ul>
+                    </div>
+    
+                </div> -->
+                </div>
+
+                <div class="right-column">
+                    <div class="profile">
+                        <h2>PROFILE</h2>
+                        <p id="profileCv">I, Raed Siddiqui, am seeking an opportunity where I can make the best of my
+                            potential
+                            and
+                            contribute to the organization's growth while polishing my skills.</p>
+                    </div>
+
+                    <div class="education">
+                        <h2>EDUCATION</h2>
+                        <div class="edu-section">
+                            <h3 id="degreeCv">Bachelor of Science in Computer Science</h3>
+                            <p id="collegeCv">University of Karachi</p>
+                            <p id="dateCv">2024 - Ongoing</p>
+                            <br>
+                            <br>
+                            <h3 id="degreeCv2"></h3>
+                            <p id="collegeCv2"></p>
+                            <p id="dateCv2"></p>
+                        </div>
+                    </div>
+
+                    <div class="experience">
+                        <h2>EXPERIENCE</h2>
+                        <h3 id="companyCv">Client Pitcher at Winklin Co.</h3>
+                        <!-- <p id="descriptionCv">I worked for about 6 months at Winklin (Software House) and gained good
+                            experience
+                            of interacting
+                            with international clients and generating leads for the company.</p> -->
+                        <p id="experienceCv">2023</p>
+                        <br>
+                        <br>
+
+                        <h3 id="companyCv2"></h3>
+                        <p id="descriptionCv2"></p>
+                        <p id="experienceCv2"></p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="zoomBtn" class="zoom-btn">
+            <button class="zoom" onclick="zoomIn()">+</button>
+        </div>
+    </div>
+    <div id="Buttons" class="buttons">
+        <div style="display: flex;align-items: center;justify-content: center;width: 100%;gap: 20px;">
+            <button id="btnEdit" class="create-btn" onclick="resumeEdit()">EDIT</button>
+            <button id="btnPanel" class="create-btn" onclick="resumePanel()">STYLE</button>
+        </div>
+        <!-- Buttons for sharing and downloading -->
+        <div
+            style="display: flex;align-items: center;justify-content: center;width: 100%;gap: 0px;flex-direction: column;">
+            <!-- <button id="shareButton" class="create-btn" style="margin:10px 0;    background-color: rgb(7 51 92);">Share
+                Resume</button> -->
+            <button id="downButton" class="create-btn"
+                style="margin:10px 0;    background-color: rgb(7 51 92);">Download as PDF</button>
+        </div>
+    </div>
+    
+    <div id="editPanel" class="edit-panel desktop">
+        <div class="pri-background">
+            <h3 class="edit-text">Primary Color:</h3>
+            <input type="color" id="priColor">
+        </div>
+        <div class="sec-background">
+            <h3 class="edit-text">Secondary Color:</h3>
+            <input type="color" id="secColor" value="#ffffff">
+        </div>
+        <div class="profile-pic">
+            <h3 class="edit-text">Border Size:</h3>
+            <div class="slidecontainer">
+                <input id="borSize" class=" slider" type="range" min="0" max="15" value="3">
+                <p>Value: <span id="demo1"></span></p>
+            </div>
+            <h3 class="edit-text">Border Radius:</h3>
+            <div class="slidecontainer">
+                <input id="borRadius" class=" slider" type="range" min="0" max="50" value="50">
+                <p>Value: <span id="demo2"></span></p>
+            </div>
+            <h3 class="edit-text">Border Color:</h3>
+            <input type="color" id="borColor" value="#cacaca">
+        </div>
+        <div class="pri-font">
+            <h3 class="edit-text">Primary Font Size:</h3>
+            <div class="slidecontainer">
+                <input id="prifontSize" class=" slider" type="range" min="0" max="50" value="40">
+                <p>Value: <span id="demo3"></span></p>
+            </div>
+            <h3 class="edit-text">Primary Font-Family:</h3>
+            <select name="" id="priFamily">
+                <option value="inter">Default</option>
+                <option value="math">Math</option>
+                <option value="sans-serif">Sans-Serif</option>
+                <option value="monospace">Monospace</option>
+                <option value="arial">Arial</option>
+                <option value="roboto">Roboto</option>
+                <option value="cursive">Cursive</option>
+            </select>
+            <h3 class="edit-text">Primary Font Color:</h3>
+            <input type="color" id="prifontColor" value="#ffffff">
+            <h3 class="edit-text">Primary Letter Spacing:</h3>
+            <div class="slidecontainer">
+                <input id="priSpacing" class=" slider" type="range" min="0" max="10" value="4">
+            </div>
+            <h3 class="edit-text">Primary Font Style:</h3>
+            <div class="styles">
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'Normal');">Normal</button>
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'Oblique');">Oblique</button>
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'italic');">Italic</button>
+            </div>
+        </div>
+        <div class="sec-font">
+            <h3 class="edit-text">Secondary Font Size:</h3>
+            <div class="slidecontainer">
+                <input id="secfontSize" class=" slider" type="range" min="0" max="30" value="16">
+                <p>Value: <span id="demo4"></span></p>
+            </div>
+            <h3 class="edit-text">Secondary Font-Family:</h3>
+            <select name="" id="secFamily">
+                <option value="inter">Default</option>
+                <option value="math">Math</option>
+                <option value="sans-serif">Sans-Serif</option>
+                <option value="monospace">Monospace</option>
+                <option value="arial">Arial</option>
+                <option value="roboto">Roboto</option>
+                <option value="cursive">Cursive</option>
+            </select>
+            <h3 class="edit-text">Secondary Font Color:</h3>
+            <input type="color" id="secfontColor" value="#000000">
+            <h3 class="edit-text">Secondary Letter Spacing:</h3>
+            <div class="slidecontainer">
+                <input id="secSpacing" class=" slider" type="range" min="0" max="10" value="2">
+            </div>
+            <h3 class="edit-text">Secondary Font Style:</h3>
+            <div class="styles">
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Normal');">Normal</button>
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Oblique');">Oblique</button>
+                <button class="font-style"
+                    onclick=" document.documentElement.style.setProperty('--secondary-font-style', 'italic');">Italic</button>
+            </div>
+            <button id="closePanel" class="create-btn">Close Panel</button>
+        </div>
+    </div>
+    <div id="editPanelMob" class="edit-panel-mobile">
+        <span class="icons"><img src="color-wheel.png" alt=""></span>
+        <span class="icons"><img src="font-size.png" alt=""></span>
+        <span class="icons"><img src="italic.png" alt=""></span>
+        <span class="icons"><img src="text.png" alt=""></span>
+        <span class="icons"><img src="font-style.png" alt=""></span>
+        <span class="icons"><img src="dot-square.png" alt=""></span>
+        <!-- <div class="pri-background">
+            <h3 class="edit-text">Primary Color:</h3>
+            <input type="color" id="priColor">
+        </div>
+        <div class="sec-background">
+            <h3 class="edit-text">Secondary Color:</h3>
+            <input type="color" id="secColor" value="#ffffff">
+        </div>
+        <div class="profile-pic">
+            <h3 class="edit-text">Border Size:</h3>
+            <div class="slidecontainer">
+                <input id="borSize" class=" slider" type="range" min="0" max="15" value="3">
+                <p>Value: <span id="demo1"></span></p>
+            </div>
+            <h3 class="edit-text">Border Radius:</h3>
+            <div class="slidecontainer">
+                <input id="borRadius" class=" slider" type="range" min="0" max="50" value="50">
+                <p>Value: <span id="demo2"></span></p>
+            </div>
+            <h3 class="edit-text">Border Color:</h3>
+            <input type="color" id="borColor" value="#cacaca">
+        </div>
+        <div class="pri-font">
+            <h3 class="edit-text">Primary Font Size:</h3>
+            <div class="slidecontainer">
+                <input id="prifontSize" class=" slider" type="range" min="0" max="50" value="40">
+                <p>Value: <span id="demo3"></span></p>
+            </div>
+            <h3 class="edit-text">Primary Font-Family:</h3>
+            <select name="" id="priFamily">
+                <option value="inter">Default</option>
+                <option value="math">Math</option>
+                <option value="sans-serif">Sans-Serif</option>
+                <option value="monospace">Monospace</option>
+                <option value="arial">Arial</option>
+                <option value="roboto">Roboto</option>
+                <option value="cursive">Cursive</option>
+            </select>
+            <h3 class="edit-text">Primary Font Color:</h3>
+            <input type="color" id="prifontColor" value="#ffffff">
+            <h3 class="edit-text">Primary Letter Spacing:</h3>
+            <div class="slidecontainer">
+                <input id="priSpacing" class=" slider" type="range" min="0" max="10" value="4">
+            </div>
+            <h3 class="edit-text">Primary Font Style:</h3>
+            <div class="styles">
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'Normal');">Normal</button>
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'Oblique');">Oblique</button>
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'italic');">Italic</button>
+            </div>
+        </div>
+        <div class="sec-font">
+            <h3 class="edit-text">Secondary Font Size:</h3>
+            <div class="slidecontainer">
+                <input id="secfontSize" class=" slider" type="range" min="0" max="30" value="16">
+                <p>Value: <span id="demo4"></span></p>
+            </div>
+            <h3 class="edit-text">Secondary Font-Family:</h3>
+            <select name="" id="secFamily">
+                <option value="inter">Default</option>
+                <option value="math">Math</option>
+                <option value="sans-serif">Sans-Serif</option>
+                <option value="monospace">Monospace</option>
+                <option value="arial">Arial</option>
+                <option value="roboto">Roboto</option>
+                <option value="cursive">Cursive</option>
+            </select>
+            <h3 class="edit-text">Secondary Font Color:</h3>
+            <input type="color" id="secfontColor" value="#000000">
+            <h3 class="edit-text">Secondary Letter Spacing:</h3>
+            <div class="slidecontainer">
+                <input id="secSpacing" class=" slider" type="range" min="0" max="10" value="2">
+            </div>
+            <h3 class="edit-text">Secondary Font Style:</h3>
+            <div class="styles">
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Normal');">Normal</button>
+                <button class="font-style"
+                    onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Oblique');">Oblique</button>
+                <button class="font-style"
+                    onclick=" document.documentElement.style.setProperty('--secondary-font-style', 'italic');">Italic</button>
+            </div>
+            <button id="closePanel" class="create-btn">Close Panel</button>
+        </div> -->
+    </div>
+    <div class="edit-option font-color">
+
+        <h3 class="edit-text">Primary Color:</h3>
+        <input type="color" id="priColor">
+
+
+        <h3 class="edit-text">Secondary Color:</h3>
+        <input type="color" id="secColor" value="#ffffff">
+
+    </div>
+    <div class="edit-option font-size">
+        <h3 class="edit-text">Primary Font Size:</h3>
+        <div class="slidecontainer">
+            <input id="prifontSize" class=" slider" type="range" min="0" max="50" value="40">
+        </div>
+        <h3 class="edit-text">Secondary Font Size:</h3>
+        <div class="slidecontainer">
+            <input id="secfontSize" class=" slider" type="range" min="0" max="30" value="16">
+        </div>
+
+    </div>
+    <div class="edit-option font-style">
+        <h3 class="edit-text">Primary Font Style:</h3>
+        <div class="styles">
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--primary-font-style', 'Normal');">Normal</button>
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--primary-font-style', 'Oblique');">Oblique</button>
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--primary-font-style', 'italic');">Italic</button>
+        </div>
+        <h3 class="edit-text">Secondary Font Style:</h3>
+        <div class="styles">
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Normal');">Normal</button>
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Oblique');">Oblique</button>
+            <button class="font-style"
+                onclick=" document.documentElement.style.setProperty('--secondary-font-style', 'italic');">Italic</button>
+        </div>
+    </div>
+    <div class="edit-option background">
+
+        <h3 class="edit-text">Primary Color:</h3>
+        <input type="color" id="priColor">
+
+
+        <h3 class="edit-text">Secondary Color:</h3>
+        <input type="color" id="secColor" value="#ffffff">
+
+    </div>
+    <div class="edit-option spacing">
+        <h3 class="edit-text">Primary Letter Spacing:</h3>
+        <div class="slidecontainer">
+            <input id="priSpacing" class=" slider" type="range" min="0" max="10" value="4">
+        </div>
+        <h3 class="edit-text">Secondary Letter Spacing:</h3>
+        <div class="slidecontainer">
+            <input id="secSpacing" class=" slider" type="range" min="0" max="10" value="2">
+        </div>
+    </div>
+    <div class="edit-option border">
+        <h3 class="edit-text">Border Size:</h3>
+        <div class="slidecontainer">
+            <input id="borSize" class=" slider" type="range" min="0" max="15" value="3">
+        </div>
+        <h3 class="edit-text">Border Radius:</h3>
+        <div class="slidecontainer">
+            <input id="borRadius" class=" slider" type="range" min="0" max="50" value="50">
+        </div>
+        <h3 class="edit-text">Border Color:</h3>
+        <input type="color" id="borColor" value="#cacaca">
+    </div>
+
+    <script src="index.js"></script>
+    <!-- Include html2canvas and jsPDF from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        document.getElementById('downButton').addEventListener('click', () => {
+            const resumeElement = document.getElementById('resumeOutput');
+
+            // Use html2canvas to capture the resume output as an image
+            html2canvas(resumeElement).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+
+                // Access the jsPDF constructor correctly
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+
+                const imgWidth = 210; // A4 width in mm
+                const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
+
+                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                pdf.save('resume.pdf');
+            }).catch(error => {
+                console.error('Error generating the PDF:', error);
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
