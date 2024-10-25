@@ -116,17 +116,17 @@ function handleImageChange() {
     }
 }
 function resumeDisplay() {
-    // Ensure at least 3 skills are added
-    // let filledSkillsCount = 0;
-    // for (let i = 0; i < elements.skill.length; i++) {
-    //     if (elements.skill[i].value.trim() !== '') {
-    //         filledSkillsCount++;
-    //     }
-    // }
-    // if (filledSkillsCount < 3) {
-    //     alert('Please add at least 3 skills to your resume.');
-    //     return; 
-    // }
+    //Ensure at least 3 skills are added
+    var filledSkillsCount = 0;
+    for (var i = 0; i < elements.skill.length; i++) {
+        if (elements.skill[i].value.trim() !== '') {
+            filledSkillsCount++;
+        }
+    }
+    if (filledSkillsCount < 3) {
+        alert('Please add at least 3 skills to your resume.');
+        return;
+    }
     elements.resumeBuild.style.display = 'none';
     elements.resumeOutput.style.display = 'flex';
     elements.buttons.style.display = 'flex';

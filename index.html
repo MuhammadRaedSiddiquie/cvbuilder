@@ -24,18 +24,18 @@
             <form id="resumeData" action="javascript:resumeDisplay()">
                 <h1 class="heading-pic">Profile Picture:</h1>
                 <div class="image" id="imgView"></div>
-                <input type="file" id="imgFile" name="img" accept="image/*">
+                <input type="file" id="imgFile" name="img" accept="image/*" required>
                 <fieldset>
                     <legend>Personal Information</legend>
                     <label for="name">Full Name:</label>
-                    <input id="name" type="text" placeholder="Enter Your Name">
+                    <input id="name" type="text" placeholder="Enter Your Name" required>
                     <label for="address">Address:</label>
-                    <input id="address" type="text" placeholder="Address">
+                    <input id="address" type="text" placeholder="Address" required>
                     <label for="phone">Phone Number:</label>
                     <input id="phone" type="tel" placeholder="e,g:+9231234567678" maxlength="13"
-                        pattern="[+]{1}[9]{1}[2]{1}[0-9]{10}">
+                        pattern="[+]{1}[9]{1}[2]{1}[0-9]{10}" required>
                     <label for="email">Email Adress:</label>
-                    <input id="email" type="email" placeholder="Email Address" pattern=".+@gmail\.com" size="30">
+                    <input id="email" type="email" placeholder="Email Address" pattern=".+@gmail\.com" size="30" required>
                     <label for="profile">About You:</label>
                     <textarea id="profile" type="text" placeholder="Enter About Yourself" rows="3"
                         maxlength="360"></textarea>
@@ -44,9 +44,9 @@
                     <legend>Education</legend>
                     <div id="eduMain">
                         <label for="degree">Degree:</label>
-                        <input id="degree" type="text" placeholder="Degree">
+                        <input id="degree" type="text" placeholder="Degree" required>
                         <label for="college">School/Academy:</label>
-                        <input id="college" type="text" placeholder="School/Academy">
+                        <input id="college" type="text" placeholder="School/Academy" required>
                         <label for="sdate">Start Date:</label>
                         <input id="sdate" type="date" placeholder="Start Date">
                         <label for="edate">End Date:</label>
@@ -68,9 +68,9 @@
                 <fieldset>
                     <legend>WORK EXPERIENCE</legend>
                     <label for="job">Job Title:</label>
-                    <input id="job" type="text" placeholder="Job Title">
+                    <input id="job" type="text" placeholder="Job Title" required>
                     <label for="company">Company Name:</label>
-                    <input id="company" type="text" placeholder="Company Name">
+                    <input id="company" type="text" placeholder="Company Name" required>
                     <label for="from">From:</label>
                     <input id="from" type="date" placeholder="">
                     <label for="till">Till:</label>
