@@ -380,8 +380,9 @@ main {
     .desktop {
         display: none;
     }
+    .edit-panel-mobile
 
-    .edit-panel-mobile {
+    .edit-panel-mobile div{
         display: none;
         width: 100%;
         height: 75px;
@@ -393,7 +394,7 @@ main {
 
     }
 
-    .edit-panel-mobile span {
+    .edit-panel-mobile div span {
         width: 50px;
         height: 50px;
         border: 2px solid #6d6d6d;

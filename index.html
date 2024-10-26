@@ -330,64 +330,40 @@
         </div>
     </div>
     <div id="editPanelMob" class="edit-panel-mobile">
-        <span class="icons"><img src="color-wheel.png" alt=""></span>
-        <span class="icons"><img src="font-size.png" alt=""></span>
-        <span class="icons"><img src="italic.png" alt=""></span>
-        <span class="icons"><img src="text.png" alt=""></span>
-        <span class="icons"><img src="font-style.png" alt=""></span>
-        <span class="icons"><img src="dot-square.png" alt=""></span>
-        <!-- <div class="pri-background">
+        <div>
+            <span class="icons"><img src="color-wheel.png" alt=""></span>
+            <span class="icons"><img src="font-size.png" alt=""></span>
+            <span class="icons"><img src="italic.png" alt=""></span>
+            <span class="icons"><img src="text.png" alt=""></span>
+            <span class="icons"><img src="font-style.png" alt=""></span>
+            <span class="icons"><img src="dot-square.png" alt=""></span>
+        </div>
+        <div class="edit-option font-color">
+
             <h3 class="edit-text">Primary Color:</h3>
             <div class="color-wrapper">
                 <input type="color" id="priColor">
             </div>
-        </div>
-        <div class="sec-background">
+
+
             <h3 class="edit-text">Secondary Color:</h3>
             <div class="color-wrapper">
                 <input type="color" id="secColor" value="#ffffff">
             </div>
+
         </div>
-        <div class="profile-pic">
-            <h3 class="edit-text">Border Size:</h3>
-            <div class="slidecontainer">
-                <input id="borSize" class=" slider" type="range" min="0" max="15" value="3">
-                <p>Value: <span id="demo1"></span></p>
-            </div>
-            <h3 class="edit-text">Border Radius:</h3>
-            <div class="slidecontainer">
-                <input id="borRadius" class=" slider" type="range" min="0" max="50" value="50">
-                <p>Value: <span id="demo2"></span></p>
-            </div>
-            <h3 class="edit-text">Border Color:</h3>
-            <div class="color-wrapper">
-                <input type="color" id="borColor" value="#cacaca">
-            </div>
-        </div>
-        <div class="pri-font">
+        <div class="edit-option font-size">
             <h3 class="edit-text">Primary Font Size:</h3>
             <div class="slidecontainer">
                 <input id="prifontSize" class=" slider" type="range" min="0" max="50" value="40">
-                <p>Value: <span id="demo3"></span></p>
             </div>
-            <h3 class="edit-text">Primary Font-Family:</h3>
-            <select name="" id="priFamily">
-                <option value="inter">Default</option>
-                <option value="math">Math</option>
-                <option value="sans-serif">Sans-Serif</option>
-                <option value="monospace">Monospace</option>
-                <option value="arial">Arial</option>
-                <option value="roboto">Roboto</option>
-                <option value="cursive">Cursive</option>
-            </select>
-            <h3 class="edit-text">Primary Font Color:</h3>
-            <div class="color-wrapper">
-                <input type="color" id="prifontColor" value="#ffffff">
-            </div>
-            <h3 class="edit-text">Primary Letter Spacing:</h3>
+            <h3 class="edit-text">Secondary Font Size:</h3>
             <div class="slidecontainer">
-                <input id="priSpacing" class=" slider" type="range" min="0" max="10" value="4">
+                <input id="secfontSize" class=" slider" type="range" min="0" max="30" value="16">
             </div>
+
+        </div>
+        <div class="edit-option font-style">
             <h3 class="edit-text">Primary Font Style:</h3>
             <div class="styles">
                 <button class="font-style"
@@ -396,31 +372,6 @@
                     onclick="document.documentElement.style.setProperty('--primary-font-style', 'Oblique');">Oblique</button>
                 <button class="font-style"
                     onclick="document.documentElement.style.setProperty('--primary-font-style', 'italic');">Italic</button>
-            </div>
-        </div>
-        <div class="sec-font">
-            <h3 class="edit-text">Secondary Font Size:</h3>
-            <div class="slidecontainer">
-                <input id="secfontSize" class=" slider" type="range" min="0" max="30" value="16">
-                <p>Value: <span id="demo4"></span></p>
-            </div>
-            <h3 class="edit-text">Secondary Font-Family:</h3>
-            <select name="" id="secFamily">
-                <option value="inter">Default</option>
-                <option value="math">Math</option>
-                <option value="sans-serif">Sans-Serif</option>
-                <option value="monospace">Monospace</option>
-                <option value="arial">Arial</option>
-                <option value="roboto">Roboto</option>
-                <option value="cursive">Cursive</option>
-            </select>
-            <h3 class="edit-text">Secondary Font Color:</h3>
-            <div class="color-wrapper">
-                <input type="color" id="secfontColor" value="#000000">
-            </div>
-            <h3 class="edit-text">Secondary Letter Spacing:</h3>
-            <div class="slidecontainer">
-                <input id="secSpacing" class=" slider" type="range" min="0" max="10" value="2">
             </div>
             <h3 class="edit-text">Secondary Font Style:</h3>
             <div class="styles">
@@ -431,92 +382,47 @@
                 <button class="font-style"
                     onclick=" document.documentElement.style.setProperty('--secondary-font-style', 'italic');">Italic</button>
             </div>
-            <button id="closePanel" class="create-btn">Close Panel</button>
-        </div> -->
-    </div>
-    <div class="edit-option font-color">
-
-        <h3 class="edit-text">Primary Color:</h3>
-        <div class="color-wrapper">
-            <input type="color" id="priColor">
         </div>
+        <div class="edit-option background">
+
+            <h3 class="edit-text">Primary Color:</h3>
+            <div class="color-wrapper">
+                <input type="color" id="priColor">
+            </div>
 
 
-        <h3 class="edit-text">Secondary Color:</h3>
-        <div class="color-wrapper">
-            <input type="color" id="secColor" value="#ffffff">
-        </div>
+            <h3 class="edit-text">Secondary Color:</h3>
+            <div class="color-wrapper">
+                <input type="color" id="secColor" value="#ffffff">
+            </div>
 
-    </div>
-    <div class="edit-option font-size">
-        <h3 class="edit-text">Primary Font Size:</h3>
-        <div class="slidecontainer">
-            <input id="prifontSize" class=" slider" type="range" min="0" max="50" value="40">
         </div>
-        <h3 class="edit-text">Secondary Font Size:</h3>
-        <div class="slidecontainer">
-            <input id="secfontSize" class=" slider" type="range" min="0" max="30" value="16">
+        <div class="edit-option spacing">
+            <h3 class="edit-text">Primary Letter Spacing:</h3>
+            <div class="slidecontainer">
+                <input id="priSpacing" class=" slider" type="range" min="0" max="10" value="4">
+            </div>
+            <h3 class="edit-text">Secondary Letter Spacing:</h3>
+            <div class="slidecontainer">
+                <input id="secSpacing" class=" slider" type="range" min="0" max="10" value="2">
+            </div>
         </div>
-
-    </div>
-    <div class="edit-option font-style">
-        <h3 class="edit-text">Primary Font Style:</h3>
-        <div class="styles">
-            <button class="font-style"
-                onclick="document.documentElement.style.setProperty('--primary-font-style', 'Normal');">Normal</button>
-            <button class="font-style"
-                onclick="document.documentElement.style.setProperty('--primary-font-style', 'Oblique');">Oblique</button>
-            <button class="font-style"
-                onclick="document.documentElement.style.setProperty('--primary-font-style', 'italic');">Italic</button>
-        </div>
-        <h3 class="edit-text">Secondary Font Style:</h3>
-        <div class="styles">
-            <button class="font-style"
-                onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Normal');">Normal</button>
-            <button class="font-style"
-                onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Oblique');">Oblique</button>
-            <button class="font-style"
-                onclick=" document.documentElement.style.setProperty('--secondary-font-style', 'italic');">Italic</button>
+        <div class="edit-option border">
+            <h3 class="edit-text">Border Size:</h3>
+            <div class="slidecontainer">
+                <input id="borSize" class=" slider" type="range" min="0" max="15" value="3">
+            </div>
+            <h3 class="edit-text">Border Radius:</h3>
+            <div class="slidecontainer">
+                <input id="borRadius" class=" slider" type="range" min="0" max="50" value="50">
+            </div>
+            <h3 class="edit-text">Border Color:</h3>
+            <div class="color-wrapper">
+                <input type="color" id="borColor" value="#cacaca">
+            </div>
         </div>
     </div>
-    <div class="edit-option background">
 
-        <h3 class="edit-text">Primary Color:</h3>
-        <div class="color-wrapper">
-            <input type="color" id="priColor">
-        </div>
-
-
-        <h3 class="edit-text">Secondary Color:</h3>
-        <div class="color-wrapper">
-            <input type="color" id="secColor" value="#ffffff">
-        </div>
-
-    </div>
-    <div class="edit-option spacing">
-        <h3 class="edit-text">Primary Letter Spacing:</h3>
-        <div class="slidecontainer">
-            <input id="priSpacing" class=" slider" type="range" min="0" max="10" value="4">
-        </div>
-        <h3 class="edit-text">Secondary Letter Spacing:</h3>
-        <div class="slidecontainer">
-            <input id="secSpacing" class=" slider" type="range" min="0" max="10" value="2">
-        </div>
-    </div>
-    <div class="edit-option border">
-        <h3 class="edit-text">Border Size:</h3>
-        <div class="slidecontainer">
-            <input id="borSize" class=" slider" type="range" min="0" max="15" value="3">
-        </div>
-        <h3 class="edit-text">Border Radius:</h3>
-        <div class="slidecontainer">
-            <input id="borRadius" class=" slider" type="range" min="0" max="50" value="50">
-        </div>
-        <h3 class="edit-text">Border Color:</h3>
-        <div class="color-wrapper">
-            <input type="color" id="borColor" value="#cacaca">
-        </div>
-    </div>
 
     <script src="index.js"></script>
     <!-- Include html2canvas and jsPDF from a CDN -->
@@ -534,7 +440,7 @@
     <script>
         document.getElementById('downButton').addEventListener('click', () => {
             const resumeElement = document.getElementById('resumeOutput');
-            resumeElement.style.zoom="100%"
+            resumeElement.style.zoom = "100%"
 
             // Use html2canvas to capture the resume output as an image
             html2canvas(resumeElement).then(canvas => {
@@ -552,7 +458,7 @@
             }).catch(error => {
                 console.error('Error generating the PDF:', error);
             });
-            resumeElement.style.zoom="50%"
+            resumeElement.style.zoom = "50%"
         });
     </script>
 
