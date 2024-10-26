@@ -24,18 +24,18 @@
             <form id="resumeData" action="javascript:resumeDisplay()">
                 <h1 class="heading-pic">Profile Picture:</h1>
                 <div class="image" id="imgView"></div>
-                <input type="file" id="imgFile" name="img" accept="image/*" required>
+                <input type="file" id="imgFile" name="img" accept="image/*">
                 <fieldset>
                     <legend>Personal Information</legend>
                     <label for="name">Full Name:</label>
-                    <input id="name" type="text" placeholder="Enter Your Name" required>
+                    <input id="name" type="text" placeholder="Enter Your Name">
                     <label for="address">Address:</label>
-                    <input id="address" type="text" placeholder="Address" required>
+                    <input id="address" type="text" placeholder="Address">
                     <label for="phone">Phone Number:</label>
                     <input id="phone" type="tel" placeholder="e,g:+9231234567678" maxlength="13"
-                        pattern="[+]{1}[9]{1}[2]{1}[0-9]{10}" required>
+                        pattern="[+]{1}[9]{1}[2]{1}[0-9]{10}">
                     <label for="email">Email Adress:</label>
-                    <input id="email" type="email" placeholder="Email Address" pattern=".+@gmail\.com" size="30" required>
+                    <input id="email" type="email" placeholder="Email Address" pattern=".+@gmail\.com" size="30">
                     <label for="profile">About You:</label>
                     <textarea id="profile" type="text" placeholder="Enter About Yourself" rows="3"
                         maxlength="360"></textarea>
@@ -44,9 +44,9 @@
                     <legend>Education</legend>
                     <div id="eduMain">
                         <label for="degree">Degree:</label>
-                        <input id="degree" type="text" placeholder="Degree" required>
+                        <input id="degree" type="text" placeholder="Degree">
                         <label for="college">School/Academy:</label>
-                        <input id="college" type="text" placeholder="School/Academy" required>
+                        <input id="college" type="text" placeholder="School/Academy">
                         <label for="sdate">Start Date:</label>
                         <input id="sdate" type="date" placeholder="Start Date">
                         <label for="edate">End Date:</label>
@@ -62,15 +62,15 @@
                         <label for="edate2">End Date:</label>
                         <input id="edate2" type="date" placeholder="End Date" style="margin-bottom: 50px;">
                     </div>
-                    <div id="eduButton" class="skill-btn" onclick="addEducation()">Add Education</div>
+                    <div id="eduButton" class="skill-btn" onclick="addEducation()">ADD EDUCATION</div>
 
                 </fieldset>
                 <fieldset>
                     <legend>WORK EXPERIENCE</legend>
                     <label for="job">Job Title:</label>
-                    <input id="job" type="text" placeholder="Job Title" required>
+                    <input id="job" type="text" placeholder="Job Title">
                     <label for="company">Company Name:</label>
-                    <input id="company" type="text" placeholder="Company Name" required>
+                    <input id="company" type="text" placeholder="Company Name">
                     <label for="from">From:</label>
                     <input id="from" type="date" placeholder="">
                     <label for="till">Till:</label>
@@ -85,7 +85,7 @@
                         <label for="till2">Till:</label>
                         <input id="till2" type="date" placeholder="">
                     </div>
-                    <div id="jobButton" class="skill-btn" onclick="addjob()">Add Experience</div>
+                    <div id="jobButton" class="skill-btn" onclick="addjob()">ADD EXPERIENCE</div>
 
 
                 </fieldset>
@@ -96,7 +96,8 @@
                         <input class="skill" type="text" placeholder="Skill">
                     </div>
 
-                    <div id="skillButton" class="skill-btn" onclick="addSkill()">Add Skill</div>
+                    <div id="skillButton" class="skill-btn" onclick="addSkill()">ADD SKILL
+                    </div>
                 </fieldset>
                 <!-- <fieldset>
                     <legend>LANGUAGES</legend>
@@ -115,7 +116,7 @@
                         <option value="Advance">Advance</option>
                     </select>
                 </fieldset> -->
-                <input type="submit" class="create-btn">
+                <input type="submit" class="create-btn" value="SUBMIT">
             </form>
         </div>
     </main>
@@ -212,9 +213,9 @@
             </div>
 
         </div>
-        <div id="zoomBtn" class="zoom-btn">
+        <!-- <div id="zoomBtn" class="zoom-btn">
             <button class="zoom" onclick="zoomIn()">+</button>
-        </div>
+        </div> -->
     </div>
     <div id="Buttons" class="buttons">
         <div style="display: flex;align-items: center;justify-content: center;width: 100%;gap: 20px;">
@@ -227,32 +228,36 @@
             <!-- <button id="shareButton" class="create-btn" style="margin:10px 0;    background-color: rgb(7 51 92);">Share
                 Resume</button> -->
             <button id="downButton" class="create-btn"
-                style="margin:10px 0;    background-color: rgb(7 51 92);">Download as PDF</button>
+                style="margin:10px 0;    background-color: rgb(2, 68, 129);">Download as PDF</button>
         </div>
     </div>
-    
+
     <div id="editPanel" class="edit-panel desktop">
         <div class="pri-background">
             <h3 class="edit-text">Primary Color:</h3>
-            <input type="color" id="priColor">
+            <div class="color-wrapper">
+                <input type="color" id="priColor">
+            </div>
         </div>
         <div class="sec-background">
             <h3 class="edit-text">Secondary Color:</h3>
-            <input type="color" id="secColor" value="#ffffff">
+            <div class="color-wrapper">
+                <input type="color" id="secColor" value="#ffffff">
+            </div>
         </div>
         <div class="profile-pic">
             <h3 class="edit-text">Border Size:</h3>
             <div class="slidecontainer">
                 <input id="borSize" class=" slider" type="range" min="0" max="15" value="3">
-                <p>Value: <span id="demo1"></span></p>
             </div>
             <h3 class="edit-text">Border Radius:</h3>
             <div class="slidecontainer">
                 <input id="borRadius" class=" slider" type="range" min="0" max="50" value="50">
-                <p>Value: <span id="demo2"></span></p>
             </div>
             <h3 class="edit-text">Border Color:</h3>
-            <input type="color" id="borColor" value="#cacaca">
+            <div class="color-wrapper">
+                <input type="color" id="borColor" value="#cacaca">
+            </div>
         </div>
         <div class="pri-font">
             <h3 class="edit-text">Primary Font Size:</h3>
@@ -271,7 +276,9 @@
                 <option value="cursive">Cursive</option>
             </select>
             <h3 class="edit-text">Primary Font Color:</h3>
-            <input type="color" id="prifontColor" value="#ffffff">
+            <div class="color-wrapper">
+                <input type="color" id="prifontColor" value="#ffffff">
+            </div>
             <h3 class="edit-text">Primary Letter Spacing:</h3>
             <div class="slidecontainer">
                 <input id="priSpacing" class=" slider" type="range" min="0" max="10" value="4">
@@ -303,7 +310,9 @@
                 <option value="cursive">Cursive</option>
             </select>
             <h3 class="edit-text">Secondary Font Color:</h3>
-            <input type="color" id="secfontColor" value="#000000">
+            <div class="color-wrapper">
+                <input type="color" id="secfontColor" value="#000000">
+            </div>
             <h3 class="edit-text">Secondary Letter Spacing:</h3>
             <div class="slidecontainer">
                 <input id="secSpacing" class=" slider" type="range" min="0" max="10" value="2">
@@ -329,11 +338,15 @@
         <span class="icons"><img src="dot-square.png" alt=""></span>
         <!-- <div class="pri-background">
             <h3 class="edit-text">Primary Color:</h3>
-            <input type="color" id="priColor">
+            <div class="color-wrapper">
+                <input type="color" id="priColor">
+            </div>
         </div>
         <div class="sec-background">
             <h3 class="edit-text">Secondary Color:</h3>
-            <input type="color" id="secColor" value="#ffffff">
+            <div class="color-wrapper">
+                <input type="color" id="secColor" value="#ffffff">
+            </div>
         </div>
         <div class="profile-pic">
             <h3 class="edit-text">Border Size:</h3>
@@ -347,7 +360,9 @@
                 <p>Value: <span id="demo2"></span></p>
             </div>
             <h3 class="edit-text">Border Color:</h3>
-            <input type="color" id="borColor" value="#cacaca">
+            <div class="color-wrapper">
+                <input type="color" id="borColor" value="#cacaca">
+            </div>
         </div>
         <div class="pri-font">
             <h3 class="edit-text">Primary Font Size:</h3>
@@ -366,7 +381,9 @@
                 <option value="cursive">Cursive</option>
             </select>
             <h3 class="edit-text">Primary Font Color:</h3>
-            <input type="color" id="prifontColor" value="#ffffff">
+            <div class="color-wrapper">
+                <input type="color" id="prifontColor" value="#ffffff">
+            </div>
             <h3 class="edit-text">Primary Letter Spacing:</h3>
             <div class="slidecontainer">
                 <input id="priSpacing" class=" slider" type="range" min="0" max="10" value="4">
@@ -398,7 +415,9 @@
                 <option value="cursive">Cursive</option>
             </select>
             <h3 class="edit-text">Secondary Font Color:</h3>
-            <input type="color" id="secfontColor" value="#000000">
+            <div class="color-wrapper">
+                <input type="color" id="secfontColor" value="#000000">
+            </div>
             <h3 class="edit-text">Secondary Letter Spacing:</h3>
             <div class="slidecontainer">
                 <input id="secSpacing" class=" slider" type="range" min="0" max="10" value="2">
@@ -418,11 +437,15 @@
     <div class="edit-option font-color">
 
         <h3 class="edit-text">Primary Color:</h3>
-        <input type="color" id="priColor">
+        <div class="color-wrapper">
+            <input type="color" id="priColor">
+        </div>
 
 
         <h3 class="edit-text">Secondary Color:</h3>
-        <input type="color" id="secColor" value="#ffffff">
+        <div class="color-wrapper">
+            <input type="color" id="secColor" value="#ffffff">
+        </div>
 
     </div>
     <div class="edit-option font-size">
@@ -459,11 +482,15 @@
     <div class="edit-option background">
 
         <h3 class="edit-text">Primary Color:</h3>
-        <input type="color" id="priColor">
+        <div class="color-wrapper">
+            <input type="color" id="priColor">
+        </div>
 
 
         <h3 class="edit-text">Secondary Color:</h3>
-        <input type="color" id="secColor" value="#ffffff">
+        <div class="color-wrapper">
+            <input type="color" id="secColor" value="#ffffff">
+        </div>
 
     </div>
     <div class="edit-option spacing">
@@ -486,16 +513,28 @@
             <input id="borRadius" class=" slider" type="range" min="0" max="50" value="50">
         </div>
         <h3 class="edit-text">Border Color:</h3>
-        <input type="color" id="borColor" value="#cacaca">
+        <div class="color-wrapper">
+            <input type="color" id="borColor" value="#cacaca">
+        </div>
     </div>
 
     <script src="index.js"></script>
     <!-- Include html2canvas and jsPDF from a CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+        onerror="handleScriptLoadError('html2canvas')"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+        onerror="handleScriptLoadError('jsPDF')"></script>
+
+    <script>
+        function handleScriptLoadError(libraryName) {
+            console.error(`${libraryName} failed to load.`);
+            alert(`${libraryName} library could not be loaded. Please check your internet connection or try again later.`);
+        }
+    </script>
     <script>
         document.getElementById('downButton').addEventListener('click', () => {
             const resumeElement = document.getElementById('resumeOutput');
+            resumeElement.style.zoom="100%"
 
             // Use html2canvas to capture the resume output as an image
             html2canvas(resumeElement).then(canvas => {
@@ -513,6 +552,7 @@
             }).catch(error => {
                 console.error('Error generating the PDF:', error);
             });
+            resumeElement.style.zoom="50%"
         });
     </script>
 

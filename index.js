@@ -77,7 +77,7 @@ var elements = {
     resumeButton: document.getElementById('resumeLink'),
     icons: document.getElementsByClassName('icons'),
     options: document.getElementsByClassName('edit-option'),
-    zoombtn: document.getElementById('zoomBtn'),
+    // zoombtn: document.getElementById('zoomBtn') as HTMLButtonElement,
 };
 var resumeUrl = '';
 var skillCounter = 1;
@@ -117,16 +117,16 @@ function handleImageChange() {
 }
 function resumeDisplay() {
     //Ensure at least 3 skills are added
-    var filledSkillsCount = 0;
-    for (var i = 0; i < elements.skill.length; i++) {
-        if (elements.skill[i].value.trim() !== '') {
-            filledSkillsCount++;
-        }
-    }
-    if (filledSkillsCount < 3) {
-        alert('Please add at least 3 skills to your resume.');
-        return;
-    }
+    // let filledSkillsCount = 0;
+    // for (let i = 0; i < elements.skill.length; i++) {
+    //     if (elements.skill[i].value.trim() !== '') {
+    //         filledSkillsCount++;
+    //     }
+    // }
+    // if (filledSkillsCount < 3) {
+    //     alert('Please add at least 3 skills to your resume.');
+    //     return; 
+    // }
     elements.resumeBuild.style.display = 'none';
     elements.resumeOutput.style.display = 'flex';
     elements.buttons.style.display = 'flex';
@@ -194,14 +194,6 @@ function resumeEdit() {
     elements.resumeOutput.style.display = 'none';
     elements.resumeBuild.style.display = 'flex';
     elements.editPanel.style.display = 'none';
-    if (screen.width <= 768) {
-        elements.editPanel.style.display = 'none';
-        elements.editPanelMob.style.display = 'flex';
-    }
-    else {
-        elements.editPanel.style.display = 'flex';
-        elements.editPanelMob.style.display = 'none';
-    }
     elements.buttons.style.display = 'none';
 }
 function addSkill() {
@@ -249,7 +241,7 @@ function resumePanel() {
         elements.editPanelMob.style.display = 'none';
     }
     elements.buttons.style.display = 'none';
-    elements.zoombtn.style.display = 'flex';
+    // elements.zoombtn.style.display='flex'
 }
 function closeEditPanel() {
     document.body.style.flexDirection = 'column';
@@ -310,12 +302,12 @@ function updatePrimaryFontFamily() {
 function updateSecondaryFontFamily() {
     document.documentElement.style.setProperty("--secondary-font-family", elements.secondaryFontFamily.value);
 }
-var zoom = 1;
-function zoomIn() {
-    zoom += 0.1;
-    elements.resumeOutput.style.transform = "scale(".concat(zoom, ")");
-    console.log('zoomed');
-}
+// let zoom=1;
+// function zoomIn(){
+//     zoom+=0.1;
+//     elements.resumeOutput.style.transform=`scale(${zoom})`
+// console.log('zoomed')
+// }
 // function shareResumeUrl(url: string) {
 //     if (navigator.share) {
 //         navigator.share({
