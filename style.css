@@ -3,31 +3,38 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
+}
+
 @font-face {
     font-family: roboto med;
     src: url(Roboto-Medium.ttf);
 }
+
 @font-face {
     font-family: roboto;
     src: url(Roboto-Black.ttf);
 }
+
 @font-face {
     font-family: franklin gothic;
     src: url(FranklinGothic.ttf);
 }
+
 @font-face {
     font-family: dmsans;
     src: url(DMSans-VariableFont_opsz\,wght.ttf);
 }
+
 @font-face {
     font-family: inter;
     src: url(Inter-VariableFont_opsz\,wght.ttf);
 }
+
 @font-face {
     font-family: monument;
     src: url(MonumentExtended-Regular.otf);
 }
+
 /* Main Container */
 main {
     background-color: #fff;
@@ -36,11 +43,13 @@ main {
     display: flex;
     justify-content: center;
 }
-.main2{
-    width: 70%; 
+
+.main2 {
+    width: 70%;
     display: flex;
-     justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     ;
 }
 
@@ -101,7 +110,7 @@ main {
     padding: 50px 10px;
 }
 
-#resumeData fieldset {
+#resumeData .fieldset {
     display: flex;
     width: 70%;
     border: 3px solid #e6e5e5;
@@ -112,13 +121,13 @@ main {
     /* box-shadow: 0px 8px 20px 4px #e5e5e5; */
 }
 
-#resumeData fieldset input[type=text],
-#resumeData fieldset input[type=number],
-#resumeData fieldset input[type=tel],
-#resumeData fieldset input[type=email],
-#resumeData fieldset input[type=date],
-#resumeData fieldset textarea,
-#resumeData fieldset select {
+#resumeData .fieldset input[type=text],
+#resumeData .fieldset input[type=number],
+#resumeData .fieldset input[type=tel],
+#resumeData .fieldset input[type=email],
+#resumeData .fieldset input[type=date],
+#resumeData .fieldset textarea,
+#resumeData .fieldset select {
     margin-bottom: 15px;
     height: 40px;
     border-radius: 7px;
@@ -127,12 +136,12 @@ main {
     border: 2px solid #e0e0e0;
 }
 
-#resumeData fieldset textarea {
+#resumeData .fieldset textarea {
     padding: 10px 10px;
     resize: none;
 }
 
-#resumeData fieldset label {
+#resumeData .fieldset label {
     font-size: 18px;
     font-weight: 400;
     font-family: inter;
@@ -140,12 +149,14 @@ main {
     margin-top: 8px;
 }
 
-#resumeData fieldset legend {
+#resumeData .fieldset legend {
     font-size: 34px;
     font-family: roboto med;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-#resumeData fieldset input[type=submit] {
+#resumeData .fieldset input[type=submit] {
     background-color: rgb(3, 115, 219);
     color: white;
     padding: 11px 23px;
@@ -176,7 +187,7 @@ main {
     text-align: center;
     width: 40%;
     margin: 10px 145px;
-    
+
 }
 
 /* Edit Panel */
@@ -202,7 +213,8 @@ main {
     font-family: inter;
     font-weight: 400;
 }
-.edit-panel .color-wrapper{
+
+.edit-panel .color-wrapper {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -213,12 +225,13 @@ main {
     border: 2px solid #d1d1d1;
     box-shadow: 1px 1px 10px 0px rgb(223, 222, 222);
 }
+
 .color-wrapper input[type=color] {
     padding: 0;
     width: 150%;
     height: 150%;
     margin: -25%;
-    
+
 }
 
 .font-style {
@@ -237,7 +250,7 @@ main {
 }
 
 .create-btn,
-#resumeData fieldset input[type=submit] {
+#resumeData .fieldset input[type=submit] {
     background-color: rgb(3, 115, 219);
     color: white;
     padding: 11px 50px;
@@ -270,19 +283,28 @@ main {
 .edit-panel-mobile {
     display: none;
 }
-.edit-option{
+
+.edit-option {
     display: none;
 }
-.zoom-btn{
+
+.zoom-btn {
     display: none;
     z-index: 3;
     position: absolute;
 }
-.zoom{
+
+.zoom {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 2px solid #cccccc;
+}
+
+@media (max-width: 1024px) {
+    .resume-container {
+        transform: scale(0.9);
+    }
 }
 
 /* Media Query for Mobile Devices */
@@ -295,9 +317,12 @@ main {
         width: 100%;
         padding: 10px;
     }
-    .main2{
-    width: 100%;
+
+    .main2 {
+        width: 100%;
+        height: 100vh;
     }
+
     .image {
         width: 100px;
         height: 100px;
@@ -318,27 +343,27 @@ main {
         gap: 5vh;
     }
 
-    #resumeData fieldset {
+    #resumeData .fieldset {
         width: 100%;
         padding: 20px;
     }
 
-    #resumeData fieldset legend {
+    #resumeData .fieldset legend {
         font-size: 24px;
     }
 
-    #resumeData fieldset label {
+    #resumeData .fieldset label {
         font-size: 16px;
     }
 
 
-    #resumeData fieldset input[type=text],
-    #resumeData fieldset input[type=number],
-    #resumeData fieldset input[type=tel],
-    #resumeData fieldset input[type=email],
-    #resumeData fieldset input[type=date],
-    #resumeData fieldset textarea,
-    #resumeData fieldset select {
+    #resumeData .fieldset input[type=text],
+    #resumeData .fieldset input[type=number],
+    #resumeData .fieldset input[type=tel],
+    #resumeData .fieldset input[type=email],
+    #resumeData .fieldset input[type=date],
+    #resumeData .fieldset textarea,
+    #resumeData .fieldset select {
         height: 35px;
         font-size: 16px;
     }
@@ -363,11 +388,14 @@ main {
 
     .resume-container {
         flex-direction: column;
-        padding: 20px;
-        zoom: 100%;
-        transform: scale(0.5);
+        transform: scale(0.7);
+        
         padding: 0;
         margin: 0;
+    }
+
+    .buttons {
+        width: 80%;
     }
 
 
@@ -380,9 +408,8 @@ main {
     .desktop {
         display: none;
     }
-    .edit-panel-mobile
 
-    .edit-panel-mobile div{
+    .edit-panel-mobile .edit-panel-mobile div {
         display: none;
         width: 100%;
         height: 75px;
@@ -475,3 +502,8 @@ main {
 
     }
 }
+@media (max-width: 480px) {
+    .resume-container {
+      transform: scale(0.5); /* Scales down to 50% */
+    }
+  }
