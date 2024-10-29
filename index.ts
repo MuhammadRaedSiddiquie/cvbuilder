@@ -5,6 +5,7 @@ const elements = {
     imageFile: document.getElementById('imgFile') as HTMLInputElement,
     resumeBuild: document.getElementById('resumeBuild') as HTMLElement,
     resumeOutput: document.getElementById('resumeOutput') as HTMLElement,
+    resumeWrapper: document.getElementById('resumeWrapper') as HTMLDivElement,
     username: document.getElementById('name') as HTMLInputElement,
     usernameCv: document.getElementById('usernameCv') as HTMLParagraphElement,
     address: document.getElementById('address') as HTMLInputElement,
@@ -91,8 +92,8 @@ let imgLink2;
 // Event Listeners
 function initializeEventListeners() {
     elements.imageFile.addEventListener('change', handleImageChange);
-    // elements.shareButton.addEventListener('click', () => shareResumeUrl(resumeUrl));
-    elements.closeButton.addEventListener('click', closeEditPanel);
+    elements.shareButton.addEventListener('click', () => shareResumeUrl(resumeUrl));
+    // elements.closeButton.addEventListener('click', closeEditPanel);
     elements.borderSize.oninput = updateBorderSize;
     elements.borderRadius.oninput = updateBorderRadius;
     elements.primaryColor.oninput = updatePrimaryColor;
@@ -139,6 +140,8 @@ function resumeDisplay() {
     elements.resumeBuild.style.display = 'none';
     elements.resumeOutput.style.display = 'flex';
     elements.buttons.style.display = 'flex';
+    elements.resumeWrapper.style.display='flex';
+    resumePanel();
     elements.imageView2.style.backgroundImage = `url('${imgLink2}')`;
 
     elements.usernameCv.innerHTML = elements.username.value || '-';
@@ -191,7 +194,6 @@ function resumeDisplay() {
     updateSkills();
 
     resumeUrl = generateUniqueUrl(elements.username.value);
-    elements.resumeButton.textContent = resumeUrl;
 }
 
 
@@ -210,6 +212,7 @@ function generateUniqueUrl(user: string): string {
 
 function resumeEdit() {
     elements.resumeOutput.style.display = 'none';
+    elements.resumeWrapper.style.display='none';
     elements.resumeBuild.style.display = 'flex';
     elements.editPanel.style.display = 'none';
     elements.buttons.style.display = 'none';
@@ -269,13 +272,11 @@ function closeEditPanel() {
 
 function updateBorderSize(event: Event) {
     const target = event.target as HTMLInputElement;
-    elements.sizeVal.innerHTML = target.value;
     document.documentElement.style.setProperty("--border-size", `${target.value}px`);
 }
 
 function updateBorderRadius(event: Event) {
     const target = event.target as HTMLInputElement;
-    elements.radiusVal.innerHTML = target.value;
     document.documentElement.style.setProperty("--border-radius", `${target.value}%`);
 }
 
@@ -336,19 +337,19 @@ function updateSecondaryFontFamily() {
 // console.log('zoomed')
 // }
 
-// function shareResumeUrl(url: string) {
-//     if (navigator.share) {
-//         navigator.share({
-//             title: 'My Resume',
-//             text: 'Check out my resume!',
-//             url: url,
-//         }).catch(error => console.error('Sharing failed:', error));
-//     } else {
-//         navigator.clipboard.writeText(url).then(() => {
-//             alert('Resume URL copied to clipboard!');
-//         }).catch(error => console.error('Copy failed:', error));
-//     }
-// }
+function shareResumeUrl(url: string) {
+    if (navigator.share) {
+        navigator.share({
+            title: 'My Resume',
+            text: 'Check out my resume!',
+            url: url,
+        }).catch(error => console.error('Sharing failed:', error));
+    } else {
+        navigator.clipboard.writeText(url).then(() => {
+            alert('Resume URL copied to clipboard!');
+        }).catch(error => console.error('Copy failed:', error));
+    }
+}
 
 // Initialize Event Listeners
 
@@ -358,4 +359,5 @@ function updateSecondaryFontFamily() {
 
 
 initializeEventListeners();
+console.log('working')
 

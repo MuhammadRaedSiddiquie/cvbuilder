@@ -5,6 +5,7 @@ var elements = {
     imageFile: document.getElementById('imgFile'),
     resumeBuild: document.getElementById('resumeBuild'),
     resumeOutput: document.getElementById('resumeOutput'),
+    resumeWrapper: document.getElementById('resumeWrapper'),
     username: document.getElementById('name'),
     usernameCv: document.getElementById('usernameCv'),
     address: document.getElementById('address'),
@@ -87,8 +88,8 @@ var imgLink2;
 // Event Listeners
 function initializeEventListeners() {
     elements.imageFile.addEventListener('change', handleImageChange);
-    // elements.shareButton.addEventListener('click', () => shareResumeUrl(resumeUrl));
-    elements.closeButton.addEventListener('click', closeEditPanel);
+    elements.shareButton.addEventListener('click', function () { return shareResumeUrl(resumeUrl); });
+    // elements.closeButton.addEventListener('click', closeEditPanel);
     elements.borderSize.oninput = updateBorderSize;
     elements.borderRadius.oninput = updateBorderRadius;
     elements.primaryColor.oninput = updatePrimaryColor;
@@ -130,6 +131,8 @@ function resumeDisplay() {
     elements.resumeBuild.style.display = 'none';
     elements.resumeOutput.style.display = 'flex';
     elements.buttons.style.display = 'flex';
+    elements.resumeWrapper.style.display = 'flex';
+    resumePanel();
     elements.imageView2.style.backgroundImage = "url('".concat(imgLink2, "')");
     elements.usernameCv.innerHTML = elements.username.value || '-';
     elements.collegeCv.innerHTML = elements.college.value || '-';
@@ -178,7 +181,6 @@ function resumeDisplay() {
     }
     updateSkills();
     resumeUrl = generateUniqueUrl(elements.username.value);
-    elements.resumeButton.textContent = resumeUrl;
 }
 function updateSkills() {
     elements.skillCv.innerHTML = ''; // Clear previous skills
@@ -192,6 +194,7 @@ function generateUniqueUrl(user) {
 }
 function resumeEdit() {
     elements.resumeOutput.style.display = 'none';
+    elements.resumeWrapper.style.display = 'none';
     elements.resumeBuild.style.display = 'flex';
     elements.editPanel.style.display = 'none';
     elements.buttons.style.display = 'none';
@@ -250,12 +253,10 @@ function closeEditPanel() {
 }
 function updateBorderSize(event) {
     var target = event.target;
-    elements.sizeVal.innerHTML = target.value;
     document.documentElement.style.setProperty("--border-size", "".concat(target.value, "px"));
 }
 function updateBorderRadius(event) {
     var target = event.target;
-    elements.radiusVal.innerHTML = target.value;
     document.documentElement.style.setProperty("--border-radius", "".concat(target.value, "%"));
 }
 function updatePrimaryColor(event) {
@@ -308,18 +309,20 @@ function updateSecondaryFontFamily() {
 //     elements.resumeOutput.style.transform=`scale(${zoom})`
 // console.log('zoomed')
 // }
-// function shareResumeUrl(url: string) {
-//     if (navigator.share) {
-//         navigator.share({
-//             title: 'My Resume',
-//             text: 'Check out my resume!',
-//             url: url,
-//         }).catch(error => console.error('Sharing failed:', error));
-//     } else {
-//         navigator.clipboard.writeText(url).then(() => {
-//             alert('Resume URL copied to clipboard!');
-//         }).catch(error => console.error('Copy failed:', error));
-//     }
-// }
+function shareResumeUrl(url) {
+    if (navigator.share) {
+        navigator.share({
+            title: 'My Resume',
+            text: 'Check out my resume!',
+            url: url,
+        }).catch(function (error) { return console.error('Sharing failed:', error); });
+    }
+    else {
+        navigator.clipboard.writeText(url).then(function () {
+            alert('Resume URL copied to clipboard!');
+        }).catch(function (error) { return console.error('Copy failed:', error); });
+    }
+}
 // Initialize Event Listeners
 initializeEventListeners();
+console.log('working');

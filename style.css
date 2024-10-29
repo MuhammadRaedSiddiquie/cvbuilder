@@ -45,10 +45,10 @@ main {
 }
 
 .main2 {
-    background-color: #967575;
+    background-color: #f1f1f1;
     width: 100%;
-    height: fit-content;
-    display: flex;
+    height: 100%;
+    display: none;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -195,8 +195,8 @@ main {
 /* Edit Panel */
 .edit-panel {
     background-color: #fff;
-    border-left: 2px solid #0373db;
-    width: 30%;
+    border-left: 2px solid #0256a3;
+    width: 45%;
     display: none;
     flex-direction: column;
     padding: 30px 15px;
@@ -238,7 +238,7 @@ main {
 
 .font-style {
     height: 30px;
-    background-color: #0373db;
+    background-color: #0256a3;
     width: 100px;
     color: #fff;
     border-radius: 12px;
@@ -247,11 +247,12 @@ main {
 
 /* Buttons Section */
 .buttons {
-    display: none;
+    display: flex;
+    margin-top: 35px;
     flex-direction: column;
 }
 
-.create-btn,
+
 #resumeData .fieldset input[type=submit] {
     background-color: rgb(3, 115, 219);
     color: white;
@@ -261,6 +262,31 @@ main {
     border-radius: 4px;
     margin: 50px 0;
     border-color: #fff;
+}
+.create-btn{
+    background-color: rgb(255 255 255);
+    color: #024481;
+    /* padding: 11px 50px; */
+    width: 150px;
+    height: 50px;
+    font-family: monospace;
+    font-size: 20px;
+    border-radius: 35px;
+    margin: 15px 0;
+    border-color: #024481;
+    border-width: 4px;
+}
+.down-btn{
+    background-color: #024481;
+    width: 180px;
+    height: 50px;
+    font-family: monospace;
+    font-size: 20px;
+    border-radius: 35px;
+    margin: 15px 0;
+    border-color: #024481;
+    border-width: 4px;
+    color: #fff;
 }
 
 /* Resume Link */
@@ -379,6 +405,7 @@ main {
 
     .edit-option>:nth-child(even) {
         margin-bottom: 10px;
+        margin-top: 20px;
     }
 
     .create-btn,
@@ -413,10 +440,10 @@ main {
         display: none;
     }
 
-    .edit-panel-mobile .edit-panel-mobile div {
-        display: none;
+    .edit-panel-mobile {
+        display: flex;
         width: 100%;
-        height: 75px;
+        height: 90px;
         border-bottom: 2px solid #cccccc;
         border-top: 2px solid #cccccc;
         overflow-y: hidden;
@@ -425,7 +452,7 @@ main {
 
     }
 
-    .edit-panel-mobile div span {
+    .edit-panel-mobile span {
         width: 50px;
         height: 50px;
         border: 2px solid #6d6d6d;
@@ -454,7 +481,7 @@ main {
         /* animation: slideup 0.5s linear forwards; */
     }
 
-    /* .font-size::after{
+     .font-size::after{
         content: '';
         width: 60px;
         height: 60px;
@@ -463,7 +490,7 @@ main {
         border-radius: 15px;
         top: -80px;
         background: white;
-    } */
+    } 
 
 
 
@@ -474,7 +501,7 @@ main {
         gap: 30px;
     }
 
-    /* .edit-option>:nth-child(even) {} */
+    .edit-option>:nth-child(even) {}
 
     .active {
         background-color: #fff;
