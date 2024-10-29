@@ -306,114 +306,142 @@
                 <button class="font-style"
                     onclick=" document.documentElement.style.setProperty('--secondary-font-style', 'italic');">Italic</button>
             </div>
-            <!-- <button id="closePanel" class="create-btn">Close Panel</button>
-              -->
-            <div id="Buttons" class="buttons">
-                <div style="display: flex;align-items: center;justify-content: center;width: 100%;gap: 20px;">
-                    <button id="btnEdit" class="create-btn" onclick="resumeEdit()">EDIT</button>
-                    <button id="shareButton" class="create-btn">SHARE</button>
-                </div>
-                <div
-                    style="display: flex;align-items: center;justify-content: center;width: 100%;gap: 0px;flex-direction: column;">
-                    <button id="downButton" class="down-btn"
-                        style="margin:10px 0;background-color:rgb(2, 68, 129);">Download</button>
-                </div>
+
+        </div>
+        <div id="Buttons" class="buttons">
+            <div style="display: flex;align-items: center;justify-content: center;width: 100%;gap: 20px;">
+                <button id="btnEdit" class="create-btn" onclick="resumeEdit()">EDIT</button>
+                <button id="shareButton" class="create-btn">SHARE</button>
+            </div>
+            <div
+                style="display: flex;align-items: center;justify-content: center;width: 100%;gap: 0px;flex-direction: column;">
+                <button id="downButton" class="down-btn" style="margin:10px 0;background-color:rgb(2, 68, 129);">Download</button>
             </div>
         </div>
     </div>
     <div id="editPanelMob" class="edit-panel-mobile">
-        
-            <span class="icons"><img src="color-wheel.png" alt=""></span>
-            <span class="icons"><img src="font-size.png" alt=""></span>
-            <span class="icons"><img src="italic.png" alt=""></span>
-            <span class="icons"><img src="text.png" alt=""></span>
-            <span class="icons"><img src="font-style.png" alt=""></span>
-            <span class="icons"><img src="dot-square.png" alt=""></span>
-        
+
+        <span class="icons"><img src="color-wheel.png" alt=""></span>
+        <span class="icons"><img src="font-size.png" alt=""></span>
+        <span class="icons"><img src="italic.png" alt=""></span>
+        <span class="icons"><img src="text.png" alt=""></span>
+        <span class="icons"><img src="font-style.png" alt=""></span>
+        <span class="icons"><img src="dot-square.png" alt=""></span>
+        <span class="icons"><img src="letter-f.png" alt=""></span>
+        <span class="icons"><img src="downloads.png" alt=""></span>
+
+    </div>
+    <div class="edit-option font-color">
+
+        <h3 class="edit-text">Primary Color:</h3>
+        <div class="color-wrapper">
+            <input type="color" id="priColorMob">
         </div>
-        <div class="edit-option font-color">
-
-            <h3 class="edit-text">Primary Color:</h3>
-            <div class="color-wrapper">
-                <input type="color" id="priColorMob">
-            </div>
 
 
-            <h3 class="edit-text">Secondary Color:</h3>
-            <div class="color-wrapper">
-                <input type="color" id="secColorMob" value="#ffffff">
-            </div>
-
+        <h3 class="edit-text">Secondary Color:</h3>
+        <div class="color-wrapper">
+            <input type="color" id="secColorMob" value="#ffffff">
         </div>
-        <div class="edit-option font-size">
-            <h3 class="edit-text">Primary Font Size:</h3>
-            <div class="slidecontainer">
-                <input id="prifontSizeMob" class=" slider" type="range" min="0" max="50" value="40">
-            </div>
-            <h3 class="edit-text">Secondary Font Size:</h3>
-            <div class="slidecontainer">
-                <input id="secfontSizeMob" class=" slider" type="range" min="0" max="30" value="16">
-            </div>
 
+    </div>
+    <div class="edit-option font-size">
+        <h3 class="edit-text">Primary Font Size:</h3>
+        <div class="slidecontainer">
+            <input id="prifontSizeMob" class=" slider" type="range" min="0" max="50" value="40">
         </div>
-        <div class="edit-option font-style">
-            <h3 class="edit-text">Primary Font Style:</h3>
-            <div class="styles">
-                <button class="font-style"
-                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'Normal');">Normal</button>
-                <button class="font-style"
-                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'Oblique');">Oblique</button>
-                <button class="font-style"
-                    onclick="document.documentElement.style.setProperty('--primary-font-style', 'italic');">Italic</button>
-            </div>
-            <h3 class="edit-text">Secondary Font Style:</h3>
-            <div class="styles">
-                <button class="font-style"
-                    onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Normal');">Normal</button>
-                <button class="font-style"
-                    onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Oblique');">Oblique</button>
-                <button class="font-style"
-                    onclick=" document.documentElement.style.setProperty('--secondary-font-style', 'italic');">Italic</button>
-            </div>
+        <h3 class="edit-text">Secondary Font Size:</h3>
+        <div class="slidecontainer">
+            <input id="secfontSizeMob" class=" slider" type="range" min="0" max="30" value="16">
         </div>
-        <div class="edit-option background">
 
-            <h3 class="edit-text">Primary Color:</h3>
-            <div class="color-wrapper">
-                <input type="color" id="priColorMob">
-            </div>
+    </div>
+    <div class="edit-option font-style">
+        <h3 class="edit-text">Primary Font Style:</h3>
+        <div class="styles">
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--primary-font-style', 'Normal');">Normal</button>
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--primary-font-style', 'Oblique');">Oblique</button>
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--primary-font-style', 'italic');">Italic</button>
+        </div>
+        <h3 class="edit-text">Secondary Font Style:</h3>
+        <div class="styles">
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Normal');">Normal</button>
+            <button class="font-style"
+                onclick="document.documentElement.style.setProperty('--secondary-font-style', 'Oblique');">Oblique</button>
+            <button class="font-style"
+                onclick=" document.documentElement.style.setProperty('--secondary-font-style', 'italic');">Italic</button>
+        </div>
+    </div>
+    <div class="edit-option background">
+
+        <h3 class="edit-text">Primary Font Color:</h3>
+        <div class="color-wrapper">
+            <input type="color" id="priFontColorMob">
+        </div>
 
 
-            <h3 class="edit-text">Secondary Color:</h3>
-            <div class="color-wrapper">
-                <input type="color" id="secColorMob" value="#ffffff">
-            </div>
+        <h3 class="edit-text">Secondary Font Color:</h3>
+        <div class="color-wrapper">
+            <input type="color" id="secFontColorMob" value="#ffffff">
+        </div>
 
+    </div>
+    <div class="edit-option spacing">
+        <h3 class="edit-text">Primary Letter Spacing:</h3>
+        <div class="slidecontainer">
+            <input id="priSpacingMob" class=" slider" type="range" min="0" max="10" value="4">
         </div>
-        <div class="edit-option spacing">
-            <h3 class="edit-text">Primary Letter Spacing:</h3>
-            <div class="slidecontainer">
-                <input id="priSpacingMob" class=" slider" type="range" min="0" max="10" value="4">
-            </div>
-            <h3 class="edit-text">Secondary Letter Spacing:</h3>
-            <div class="slidecontainer">
-                <input id="secSpacingMob" class=" slider" type="range" min="0" max="10" value="2">
-            </div>
+        <h3 class="edit-text">Secondary Letter Spacing:</h3>
+        <div class="slidecontainer">
+            <input id="secSpacingMob" class=" slider" type="range" min="0" max="10" value="2">
         </div>
-        <div class="edit-option border">
-            <h3 class="edit-text">Border Size:</h3>
-            <div class="slidecontainer">
-                <input id="borSizeMob" class=" slider" type="range" min="0" max="15" value="3">
-            </div>
-            <h3 class="edit-text">Border Radius:</h3>
-            <div class="slidecontainer">
-                <input id="borRadiusMob" class=" slider" type="range" min="0" max="50" value="50">
-            </div>
-            <h3 class="edit-text">Border Color:</h3>
-            <div class="color-wrapper">
-                <input type="color" id="borColorMob" value="#cacaca">
-            </div>
+    </div>
+    <div class="edit-option border">
+        <h3 class="edit-text">Border Size:</h3>
+        <div class="slidecontainer">
+            <input id="borSizeMob" class=" slider" type="range" min="0" max="15" value="3">
         </div>
+        <h3 class="edit-text">Border Radius:</h3>
+        <div class="slidecontainer">
+            <input id="borRadiusMob" class=" slider" type="range" min="0" max="50" value="50">
+        </div>
+        <h3 class="edit-text">Border Color:</h3>
+        <div class="color-wrapper">
+            <input type="color" id="borColorMob" value="#cacaca">
+        </div>
+    </div>
+    <div class="edit-option">
+        <h3 class="edit-text">Primary Font-Family:</h3>
+        <select name="" id="priFamilyMob">
+            <option value="inter">Default</option>
+            <option value="math">Math</option>
+            <option value="sans-serif">Sans-Serif</option>
+            <option value="monospace">Monospace</option>
+            <option value="arial">Arial</option>
+            <option value="roboto">Roboto</option>
+            <option value="cursive">Cursive</option>
+        </select>
+        <h3 class="edit-text">Secondary Font-Family:</h3>
+        <select name="" id="secFamilyMob">
+            <option value="inter">Default</option>
+            <option value="math">Math</option>
+            <option value="sans-serif">Sans-Serif</option>
+            <option value="monospace">Monospace</option>
+            <option value="arial">Arial</option>
+            <option value="roboto">Roboto</option>
+            <option value="cursive">Cursive</option>
+        </select>
+
+    </div>
+    <div class="edit-option download">
+        <button id="shareButtonMob" class="create-btn">SHARE</button>
+        <button id="downButtonMob" class="down-btn"
+            style="margin:10px 0;background-color:rgb(2, 68, 129);">Download</button>
+    </div>
 
 
     <script src="index.js"></script>
@@ -446,6 +474,7 @@
             resumeElement.style.zoom = "50%"
         });
     </script>
+
 
 
 </body>

@@ -85,14 +85,15 @@ const elements = {
     primaryColorMob: document.getElementById('priColorMob') as HTMLInputElement || null,
     secondaryColorMob: document.getElementById('secColorMob') as HTMLInputElement || null,
     borderColorMob: document.getElementById('borColorMob') as HTMLInputElement || null,
-    primaryFontColorMob: document.getElementById('prifontColorMob') as HTMLInputElement || null,
-    secondaryFontColorMob: document.getElementById('secfontColorMob') as HTMLInputElement || null,
+    primaryFontColorMob: document.getElementById('priFontColorMob') as HTMLInputElement || null,
+    secondaryFontColorMob: document.getElementById('secFontColorMob') as HTMLInputElement || null,
     primaryFontSizeMob: document.getElementById('prifontSizeMob') as HTMLInputElement || null,
     secondaryFontSizeMob: document.getElementById('secfontSizeMob') as HTMLInputElement || null,
     primarySpacingMob: document.getElementById('priSpacingMob') as HTMLInputElement || null,
     secondarySpacingMob: document.getElementById('secSpacingMob') as HTMLInputElement || null,
-    // primaryFontFamilyMob: document.getElementById('priFamilyMob') as HTMLInputElement || null,
-    // secondaryFontFamilyMob: document.getElementById('secFamilyMob') as HTMLInputElement || null,
+    primaryFontFamilyMob: document.getElementById('priFamilyMob') as HTMLInputElement || null,
+    secondaryFontFamilyMob: document.getElementById('secFamilyMob') as HTMLInputElement || null,
+    shareButtonMob: document.getElementById('shareButtonMob') as HTMLButtonElement || null
 
 
 };
@@ -108,6 +109,7 @@ let imgLink2;
 function initializeEventListeners() {
     elements.imageFile.addEventListener('change', handleImageChange);
     elements.shareButton.addEventListener('click', () => shareResumeUrl(resumeUrl));
+    elements.shareButtonMob.addEventListener('click', () => shareResumeUrl(resumeUrl));
     elements.borderSize.oninput = updateBorderSize;
     elements.borderRadius.oninput = updateBorderRadius;
     elements.primaryColor.oninput = updatePrimaryColor;
@@ -133,8 +135,8 @@ function initializeEventListeners() {
     elements.borderColorMob.oninput = updateBorderColor;
     elements.primaryFontColorMob.oninput = updatePrimaryFontColor;
     elements.secondaryFontColorMob.oninput = updateSecondaryFontColor;
-    // elements.primaryFontFamilyMob.addEventListener('change', updatePrimaryFontFamily);
-    // elements.secondaryFontFamilyMob.addEventListener('change', updateSecondaryFontFamily);
+    elements.primaryFontFamilyMob.addEventListener('change', updatePrimaryFontFamilyMob);
+    elements.secondaryFontFamilyMob.addEventListener('change', updateSecondaryFontFamilyMob);
 }
 
 // Functions
@@ -175,22 +177,22 @@ function resumeDisplay() {
     elements.usernameCv.innerHTML = elements.username.value || '-';
     elements.collegeCv.innerHTML = elements.college.value || '-';
     elements.degreeCv.innerHTML = elements.degree.value || '-';
-    elements.collegeCv2.innerHTML = elements.college2.value || '-';
-    elements.degreeCv2.innerHTML = elements.degree2.value || '-';
-    elements.addressCv.innerHTML = elements.address.value;
-    elements.phoneCv.innerHTML = elements.phone.value;
-    elements.emailCv.innerHTML = elements.email.value;
-    elements.profileCv.innerHTML = elements.profile.value;
+    elements.collegeCv2.innerHTML = elements.college2.value;
+    elements.degreeCv2.innerHTML = elements.degree2.value;
+    elements.addressCv.innerHTML = elements.address.value || '-';
+    elements.phoneCv.innerHTML = elements.phone.value || '-';
+    elements.emailCv.innerHTML = elements.email.value || '-';
+    elements.profileCv.innerHTML = elements.profile.value || '-';
 
     if (elements.job.value == '' || elements.company.value == '') {
-        elements.companyCv.innerHTML = elements.job.value + ' ' + elements.company.value || '-';
+        elements.companyCv.innerHTML = '-';
 
     } else {
         elements.companyCv.innerHTML = elements.job.value + ' at ' + elements.company.value || '-';
 
     }
     if (elements.job2.value == '' || elements.company2.value == '') {
-        elements.companyCv2.innerHTML = elements.job2.value + ' ' + elements.company2.value || '-';
+        elements.companyCv2.innerHTML = '-';
 
     } else {
         elements.companyCv2.innerHTML = elements.job2.value + ' at ' + elements.company2.value || '-';
@@ -270,8 +272,8 @@ function resumePanel() {
     document.body.style.flexDirection = 'row'
     // elements.editPanel.style.display = 'flex';
     if (screen.width <= 768) {
-        elements.editPanel.style.display = 'none';
-        elements.editPanelMob.style.display = 'flex';
+        // elements.editPanel.style.display = 'none';
+        // elements.editPanelMob.style.display = 'flex';
         for (let i = 0; i < elements.icons.length; i++) {
             elements.icons[i].addEventListener('click', () => {
                 elements.icons[i].classList.add('active')
@@ -291,8 +293,9 @@ function resumePanel() {
     } else {
         elements.editPanel.style.display = 'flex';
         elements.editPanelMob.style.display = 'none';
+        console.log('heppp')
     }
-    elements.buttons.style.display = 'none';
+    
     // elements.zoombtn.style.display='flex'
 }
 // function closeEditPanel() {
@@ -361,6 +364,13 @@ function updatePrimaryFontFamily() {
 
 function updateSecondaryFontFamily() {
     document.documentElement.style.setProperty("--secondary-font-family", elements.secondaryFontFamily.value);
+}
+function updatePrimaryFontFamilyMob() {
+    document.documentElement.style.setProperty("--primary-font-family", elements.primaryFontFamilyMob.value);
+}
+
+function updateSecondaryFontFamilyMob() {
+    document.documentElement.style.setProperty("--secondary-font-family", elements.secondaryFontFamilyMob.value);
 }
 // let zoom=1;
 // function zoomIn(){

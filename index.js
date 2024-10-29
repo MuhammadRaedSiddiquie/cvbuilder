@@ -84,14 +84,15 @@ var elements = {
     primaryColorMob: document.getElementById('priColorMob') || null,
     secondaryColorMob: document.getElementById('secColorMob') || null,
     borderColorMob: document.getElementById('borColorMob') || null,
-    primaryFontColorMob: document.getElementById('prifontColorMob') || null,
-    secondaryFontColorMob: document.getElementById('secfontColorMob') || null,
+    primaryFontColorMob: document.getElementById('priFontColorMob') || null,
+    secondaryFontColorMob: document.getElementById('secFontColorMob') || null,
     primaryFontSizeMob: document.getElementById('prifontSizeMob') || null,
     secondaryFontSizeMob: document.getElementById('secfontSizeMob') || null,
     primarySpacingMob: document.getElementById('priSpacingMob') || null,
     secondarySpacingMob: document.getElementById('secSpacingMob') || null,
-    // primaryFontFamilyMob: document.getElementById('priFamilyMob') as HTMLInputElement || null,
-    // secondaryFontFamilyMob: document.getElementById('secFamilyMob') as HTMLInputElement || null,
+    primaryFontFamilyMob: document.getElementById('priFamilyMob') || null,
+    secondaryFontFamilyMob: document.getElementById('secFamilyMob') || null,
+    shareButtonMob: document.getElementById('shareButtonMob') || null
 };
 var resumeUrl = '';
 var skillCounter = 1;
@@ -102,6 +103,7 @@ var imgLink2;
 function initializeEventListeners() {
     elements.imageFile.addEventListener('change', handleImageChange);
     elements.shareButton.addEventListener('click', function () { return shareResumeUrl(resumeUrl); });
+    elements.shareButtonMob.addEventListener('click', function () { return shareResumeUrl(resumeUrl); });
     elements.borderSize.oninput = updateBorderSize;
     elements.borderRadius.oninput = updateBorderRadius;
     elements.primaryColor.oninput = updatePrimaryColor;
@@ -127,8 +129,8 @@ function initializeEventListeners() {
     elements.borderColorMob.oninput = updateBorderColor;
     elements.primaryFontColorMob.oninput = updatePrimaryFontColor;
     elements.secondaryFontColorMob.oninput = updateSecondaryFontColor;
-    // elements.primaryFontFamilyMob.addEventListener('change', updatePrimaryFontFamily);
-    // elements.secondaryFontFamilyMob.addEventListener('change', updateSecondaryFontFamily);
+    elements.primaryFontFamilyMob.addEventListener('change', updatePrimaryFontFamilyMob);
+    elements.secondaryFontFamilyMob.addEventListener('change', updateSecondaryFontFamilyMob);
 }
 // Functions
 function handleImageChange() {
@@ -163,20 +165,20 @@ function resumeDisplay() {
     elements.usernameCv.innerHTML = elements.username.value || '-';
     elements.collegeCv.innerHTML = elements.college.value || '-';
     elements.degreeCv.innerHTML = elements.degree.value || '-';
-    elements.collegeCv2.innerHTML = elements.college2.value || '-';
-    elements.degreeCv2.innerHTML = elements.degree2.value || '-';
-    elements.addressCv.innerHTML = elements.address.value;
-    elements.phoneCv.innerHTML = elements.phone.value;
-    elements.emailCv.innerHTML = elements.email.value;
-    elements.profileCv.innerHTML = elements.profile.value;
+    elements.collegeCv2.innerHTML = elements.college2.value;
+    elements.degreeCv2.innerHTML = elements.degree2.value;
+    elements.addressCv.innerHTML = elements.address.value || '-';
+    elements.phoneCv.innerHTML = elements.phone.value || '-';
+    elements.emailCv.innerHTML = elements.email.value || '-';
+    elements.profileCv.innerHTML = elements.profile.value || '-';
     if (elements.job.value == '' || elements.company.value == '') {
-        elements.companyCv.innerHTML = elements.job.value + ' ' + elements.company.value || '-';
+        elements.companyCv.innerHTML = '-';
     }
     else {
         elements.companyCv.innerHTML = elements.job.value + ' at ' + elements.company.value || '-';
     }
     if (elements.job2.value == '' || elements.company2.value == '') {
-        elements.companyCv2.innerHTML = elements.job2.value + ' ' + elements.company2.value || '-';
+        elements.companyCv2.innerHTML = '-';
     }
     else {
         elements.companyCv2.innerHTML = elements.job2.value + ' at ' + elements.company2.value || '-';
@@ -246,8 +248,6 @@ function resumePanel() {
     document.body.style.flexDirection = 'row';
     // elements.editPanel.style.display = 'flex';
     if (screen.width <= 768) {
-        elements.editPanel.style.display = 'none';
-        elements.editPanelMob.style.display = 'flex';
         var _loop_1 = function (i) {
             elements.icons[i].addEventListener('click', function () {
                 elements.icons[i].classList.add('active');
@@ -262,6 +262,8 @@ function resumePanel() {
                 }
             });
         };
+        // elements.editPanel.style.display = 'none';
+        // elements.editPanelMob.style.display = 'flex';
         for (var i = 0; i < elements.icons.length; i++) {
             _loop_1(i);
         }
@@ -270,8 +272,8 @@ function resumePanel() {
     else {
         elements.editPanel.style.display = 'flex';
         elements.editPanelMob.style.display = 'none';
+        console.log('heppp');
     }
-    elements.buttons.style.display = 'none';
     // elements.zoombtn.style.display='flex'
 }
 // function closeEditPanel() {
@@ -331,6 +333,12 @@ function updatePrimaryFontFamily() {
 }
 function updateSecondaryFontFamily() {
     document.documentElement.style.setProperty("--secondary-font-family", elements.secondaryFontFamily.value);
+}
+function updatePrimaryFontFamilyMob() {
+    document.documentElement.style.setProperty("--primary-font-family", elements.primaryFontFamilyMob.value);
+}
+function updateSecondaryFontFamilyMob() {
+    document.documentElement.style.setProperty("--secondary-font-family", elements.secondaryFontFamilyMob.value);
 }
 // let zoom=1;
 // function zoomIn(){
