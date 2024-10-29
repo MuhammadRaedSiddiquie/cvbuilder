@@ -1,84 +1,98 @@
 // Element References
 const elements = {
-    imageView: document.getElementById('imgView') as HTMLDivElement,
-    imageView2: document.getElementById('imgView2') as HTMLDivElement,
-    imageFile: document.getElementById('imgFile') as HTMLInputElement,
-    resumeBuild: document.getElementById('resumeBuild') as HTMLElement,
-    resumeOutput: document.getElementById('resumeOutput') as HTMLElement,
-    resumeWrapper: document.getElementById('resumeWrapper') as HTMLDivElement,
-    username: document.getElementById('name') as HTMLInputElement,
-    usernameCv: document.getElementById('usernameCv') as HTMLParagraphElement,
-    address: document.getElementById('address') as HTMLInputElement,
-    addressCv: document.getElementById('addressCv') as HTMLParagraphElement,
-    phone: document.getElementById('phone') as HTMLInputElement,
-    phoneCv: document.getElementById('phoneCv') as HTMLParagraphElement,
-    email: document.getElementById('email') as HTMLInputElement,
-    emailCv: document.getElementById('emailCv') as HTMLParagraphElement,
-    degree: document.getElementById('degree') as HTMLInputElement,
-    degreeCv: document.getElementById('degreeCv') as HTMLParagraphElement,
-    college: document.getElementById('college') as HTMLInputElement,
-    collegeCv: document.getElementById('collegeCv') as HTMLParagraphElement,
-    eduMain: document.getElementById('eduMain') as HTMLElement,
-    eduMain2: document.getElementById('eduMain2') as HTMLElement,
-    jobMain: document.getElementById('jobMain') as HTMLElement,
-    degree2: document.getElementById('degree2') as HTMLInputElement,
-    degreeCv2: document.getElementById('degreeCv2') as HTMLParagraphElement,
-    college2: document.getElementById('college2') as HTMLInputElement,
-    collegeCv2: document.getElementById('collegeCv2') as HTMLParagraphElement,
-    sDate: document.getElementById('sdate') as HTMLInputElement,
-    eDate: document.getElementById('edate') as HTMLInputElement,
-    dateCv: document.getElementById('dateCv') as HTMLParagraphElement,
-    sDate2: document.getElementById('sdate2') as HTMLInputElement,
-    eDate2: document.getElementById('edate2') as HTMLInputElement,
-    dateCv2: document.getElementById('dateCv2') as HTMLParagraphElement,
-    profile: document.getElementById('profile') as HTMLInputElement,
-    profileCv: document.getElementById('profileCv') as HTMLParagraphElement,
-    job: document.getElementById('job') as HTMLInputElement,
-    company: document.getElementById('company') as HTMLInputElement,
-    companyCv: document.getElementById('companyCv') as HTMLParagraphElement,
-    job2: document.getElementById('job2') as HTMLInputElement,
-    company2: document.getElementById('company2') as HTMLInputElement,
-    companyCv2: document.getElementById('companyCv2') as HTMLParagraphElement,
-    description2: document.getElementById('description2') as HTMLInputElement,
-    descriptionCv2: document.getElementById('descriptionCv2') as HTMLParagraphElement,
-    from: document.getElementById('from') as HTMLInputElement,
-    till: document.getElementById('till') as HTMLInputElement,
-    experienceCv: document.getElementById('experienceCv') as HTMLParagraphElement,
-    from2: document.getElementById('from2') as HTMLInputElement,
-    till2: document.getElementById('till2') as HTMLInputElement,
-    experienceCv2: document.getElementById('experienceCv2') as HTMLParagraphElement,
-    skill: document.getElementsByClassName('skill') as HTMLCollectionOf<HTMLInputElement>,
-    skillCv: document.getElementById('skillCv') as HTMLParagraphElement,
-    skillMain: document.getElementById('skillMain') as HTMLElement,
-    borderSize: document.getElementById('borSize') as HTMLInputElement,
-    borderRadius: document.getElementById('borRadius') as HTMLInputElement,
-    sizeVal: document.getElementById('demo1') as HTMLParagraphElement,
-    radiusVal: document.getElementById('demo2') as HTMLParagraphElement,
-    prifontVal: document.getElementById('demo3') as HTMLParagraphElement,
-    secfontVal: document.getElementById('demo4') as HTMLParagraphElement,
-    primaryColor: document.getElementById('priColor') as HTMLInputElement,
-    secondaryColor: document.getElementById('secColor') as HTMLInputElement,
-    borderColor: document.getElementById('borColor') as HTMLInputElement,
-    primaryFontColor: document.getElementById('prifontColor') as HTMLInputElement,
-    secondaryFontColor: document.getElementById('secfontColor') as HTMLInputElement,
-    primaryFontSize: document.getElementById('prifontSize') as HTMLInputElement,
-    secondaryFontSize: document.getElementById('secfontSize') as HTMLInputElement,
-    primarySpacing: document.getElementById('priSpacing') as HTMLInputElement,
-    secondarySpacing: document.getElementById('secSpacing') as HTMLInputElement,
-    primaryFontFamily: document.getElementById('priFamily') as HTMLInputElement,
-    secondaryFontFamily: document.getElementById('secFamily') as HTMLInputElement,
-    editPanel: document.getElementById('editPanel') as HTMLDivElement,
-    editPanelMob: document.getElementById('editPanelMob') as HTMLDivElement,
-    shareButton: document.getElementById('shareButton') as HTMLButtonElement,
-    closeButton: document.getElementById('closePanel') as HTMLButtonElement,
-    skillAddbtn: document.getElementById('skillButton') as HTMLButtonElement,
-    eduAddbtn: document.getElementById('eduButton') as HTMLButtonElement,
-    jobAddbtn: document.getElementById('jobButton') as HTMLButtonElement,
-    buttons: document.getElementById('Buttons') as HTMLElement,
-    resumeButton: document.getElementById('resumeLink') as HTMLParagraphElement,
-    icons: document.getElementsByClassName('icons') as HTMLCollectionOf<HTMLDivElement>,
-    options: document.getElementsByClassName('edit-option') as HTMLCollectionOf<HTMLDivElement>,
-    // zoombtn: document.getElementById('zoomBtn') as HTMLButtonElement,
+    imageView: document.getElementById('imgView') as HTMLDivElement || null,
+    imageView2: document.getElementById('imgView2') as HTMLDivElement || null,
+    imageFile: document.getElementById('imgFile') as HTMLInputElement || null,
+    resumeBuild: document.getElementById('resumeBuild') as HTMLElement || null,
+    resumeOutput: document.getElementById('resumeOutput') as HTMLElement || null,
+    resumeWrapper: document.getElementById('resumeWrapper') as HTMLDivElement || null,
+    username: document.getElementById('name') as HTMLInputElement || null,
+    usernameCv: document.getElementById('usernameCv') as HTMLParagraphElement || null,
+    address: document.getElementById('address') as HTMLInputElement || null,
+    addressCv: document.getElementById('addressCv') as HTMLParagraphElement || null,
+    phone: document.getElementById('phone') as HTMLInputElement || null,
+    phoneCv: document.getElementById('phoneCv') as HTMLParagraphElement || null,
+    email: document.getElementById('email') as HTMLInputElement || null,
+    emailCv: document.getElementById('emailCv') as HTMLParagraphElement || null,
+    degree: document.getElementById('degree') as HTMLInputElement || null,
+    degreeCv: document.getElementById('degreeCv') as HTMLParagraphElement || null,
+    college: document.getElementById('college') as HTMLInputElement || null,
+    collegeCv: document.getElementById('collegeCv') as HTMLParagraphElement || null,
+    eduMain: document.getElementById('eduMain') as HTMLElement || null,
+    eduMain2: document.getElementById('eduMain2') as HTMLElement || null,
+    jobMain: document.getElementById('jobMain') as HTMLElement || null,
+    degree2: document.getElementById('degree2') as HTMLInputElement || null,
+    degreeCv2: document.getElementById('degreeCv2') as HTMLParagraphElement || null,
+    college2: document.getElementById('college2') as HTMLInputElement || null,
+    collegeCv2: document.getElementById('collegeCv2') as HTMLParagraphElement || null,
+    sDate: document.getElementById('sdate') as HTMLInputElement || null,
+    eDate: document.getElementById('edate') as HTMLInputElement || null,
+    dateCv: document.getElementById('dateCv') as HTMLParagraphElement || null,
+    sDate2: document.getElementById('sdate2') as HTMLInputElement || null,
+    eDate2: document.getElementById('edate2') as HTMLInputElement || null,
+    dateCv2: document.getElementById('dateCv2') as HTMLParagraphElement || null,
+    profile: document.getElementById('profile') as HTMLInputElement || null,
+    profileCv: document.getElementById('profileCv') as HTMLParagraphElement || null,
+    job: document.getElementById('job') as HTMLInputElement || null,
+    company: document.getElementById('company') as HTMLInputElement || null,
+    companyCv: document.getElementById('companyCv') as HTMLParagraphElement || null,
+    job2: document.getElementById('job2') as HTMLInputElement || null,
+    company2: document.getElementById('company2') as HTMLInputElement || null,
+    companyCv2: document.getElementById('companyCv2') as HTMLParagraphElement || null,
+    description2: document.getElementById('description2') as HTMLInputElement || null,
+    descriptionCv2: document.getElementById('descriptionCv2') as HTMLParagraphElement || null,
+    from: document.getElementById('from') as HTMLInputElement || null,
+    till: document.getElementById('till') as HTMLInputElement || null,
+    experienceCv: document.getElementById('experienceCv') as HTMLParagraphElement || null,
+    from2: document.getElementById('from2') as HTMLInputElement || null,
+    till2: document.getElementById('till2') as HTMLInputElement || null,
+    experienceCv2: document.getElementById('experienceCv2') as HTMLParagraphElement || null,
+    skill: document.getElementsByClassName('skill') as HTMLCollectionOf<HTMLInputElement> || null,
+    skillCv: document.getElementById('skillCv') as HTMLParagraphElement || null,
+    skillMain: document.getElementById('skillMain') as HTMLElement || null,
+    borderSize: document.getElementById('borSize') as HTMLInputElement || null,
+    borderRadius: document.getElementById('borRadius') as HTMLInputElement || null,
+    sizeVal: document.getElementById('demo1') as HTMLParagraphElement || null,
+    radiusVal: document.getElementById('demo2') as HTMLParagraphElement || null,
+    prifontVal: document.getElementById('demo3') as HTMLParagraphElement || null,
+    secfontVal: document.getElementById('demo4') as HTMLParagraphElement || null,
+    primaryColor: document.getElementById('priColor') as HTMLInputElement || null,
+    secondaryColor: document.getElementById('secColor') as HTMLInputElement || null,
+    borderColor: document.getElementById('borColor') as HTMLInputElement || null,
+    primaryFontColor: document.getElementById('prifontColor') as HTMLInputElement || null,
+    secondaryFontColor: document.getElementById('secfontColor') as HTMLInputElement || null,
+    primaryFontSize: document.getElementById('prifontSize') as HTMLInputElement || null,
+    secondaryFontSize: document.getElementById('secfontSize') as HTMLInputElement || null,
+    primarySpacing: document.getElementById('priSpacing') as HTMLInputElement || null,
+    secondarySpacing: document.getElementById('secSpacing') as HTMLInputElement || null,
+    primaryFontFamily: document.getElementById('priFamily') as HTMLInputElement || null,
+    secondaryFontFamily: document.getElementById('secFamily') as HTMLInputElement || null,
+    editPanel: document.getElementById('editPanel') as HTMLDivElement || null,
+    editPanelMob: document.getElementById('editPanelMob') as HTMLDivElement || null,
+    shareButton: document.getElementById('shareButton') as HTMLButtonElement || null,
+    closeButton: document.getElementById('closePanel') as HTMLButtonElement || null,
+    skillAddbtn: document.getElementById('skillButton') as HTMLButtonElement || null,
+    eduAddbtn: document.getElementById('eduButton') as HTMLButtonElement || null,
+    jobAddbtn: document.getElementById('jobButton') as HTMLButtonElement || null,
+    buttons: document.getElementById('Buttons') as HTMLElement || null,
+    resumeButton: document.getElementById('resumeLink') as HTMLParagraphElement || null,
+    icons: document.getElementsByClassName('icons') as HTMLCollectionOf<HTMLDivElement> || null,
+    options: document.getElementsByClassName('edit-option') as HTMLCollectionOf<HTMLDivElement> || null,
+    // zoombtn: document.getElementById('zoomBtn') as HTMLButtonElement || null,
+
+    borderSizeMob: document.getElementById('borSizeMob') as HTMLInputElement || null,
+    borderRadiusMob: document.getElementById('borRadiusMob') as HTMLInputElement || null,
+    primaryColorMob: document.getElementById('priColorMob') as HTMLInputElement || null,
+    secondaryColorMob: document.getElementById('secColorMob') as HTMLInputElement || null,
+    borderColorMob: document.getElementById('borColorMob') as HTMLInputElement || null,
+    primaryFontColorMob: document.getElementById('prifontColorMob') as HTMLInputElement || null,
+    secondaryFontColorMob: document.getElementById('secfontColorMob') as HTMLInputElement || null,
+    primaryFontSizeMob: document.getElementById('prifontSizeMob') as HTMLInputElement || null,
+    secondaryFontSizeMob: document.getElementById('secfontSizeMob') as HTMLInputElement || null,
+    primarySpacingMob: document.getElementById('priSpacingMob') as HTMLInputElement || null,
+    secondarySpacingMob: document.getElementById('secSpacingMob') as HTMLInputElement || null,
+    // primaryFontFamilyMob: document.getElementById('priFamilyMob') as HTMLInputElement || null,
+    // secondaryFontFamilyMob: document.getElementById('secFamilyMob') as HTMLInputElement || null,
 
 
 };
@@ -89,11 +103,11 @@ let eduCounter = 1;
 let jobCounter = 1;
 let imgLink2;
 
+
 // Event Listeners
 function initializeEventListeners() {
     elements.imageFile.addEventListener('change', handleImageChange);
     elements.shareButton.addEventListener('click', () => shareResumeUrl(resumeUrl));
-    // elements.closeButton.addEventListener('click', closeEditPanel);
     elements.borderSize.oninput = updateBorderSize;
     elements.borderRadius.oninput = updateBorderRadius;
     elements.primaryColor.oninput = updatePrimaryColor;
@@ -107,6 +121,20 @@ function initializeEventListeners() {
     elements.secondaryFontColor.oninput = updateSecondaryFontColor;
     elements.primaryFontFamily.addEventListener('change', updatePrimaryFontFamily);
     elements.secondaryFontFamily.addEventListener('change', updateSecondaryFontFamily);
+    // elements.closeButton.addEventListener('click', closeEditPanel);
+    elements.borderSizeMob.oninput = updateBorderSize;
+    elements.borderRadiusMob.oninput = updateBorderRadius;
+    elements.primaryColorMob.oninput = updatePrimaryColor;
+    elements.primaryFontSizeMob.oninput = updatePrimarySize;
+    elements.secondaryFontSizeMob.oninput = updateSecondarySize;
+    elements.primarySpacingMob.oninput = updatePrimarySpacing;
+    elements.secondarySpacingMob.oninput = updateSecondarySpacing;
+    elements.secondaryColorMob.oninput = updateSecondaryColor;
+    elements.borderColorMob.oninput = updateBorderColor;
+    elements.primaryFontColorMob.oninput = updatePrimaryFontColor;
+    elements.secondaryFontColorMob.oninput = updateSecondaryFontColor;
+    // elements.primaryFontFamilyMob.addEventListener('change', updatePrimaryFontFamily);
+    // elements.secondaryFontFamilyMob.addEventListener('change', updateSecondaryFontFamily);
 }
 
 // Functions
@@ -140,7 +168,7 @@ function resumeDisplay() {
     elements.resumeBuild.style.display = 'none';
     elements.resumeOutput.style.display = 'flex';
     elements.buttons.style.display = 'flex';
-    elements.resumeWrapper.style.display='flex';
+    elements.resumeWrapper.style.display = 'flex';
     resumePanel();
     elements.imageView2.style.backgroundImage = `url('${imgLink2}')`;
 
@@ -194,11 +222,12 @@ function resumeDisplay() {
     updateSkills();
 
     resumeUrl = generateUniqueUrl(elements.username.value);
+
 }
 
 
 function updateSkills() {
-    elements.skillCv.innerHTML = ''; // Clear previous skills
+    elements.skillCv.innerHTML = ''; // Clear previous skill || nulls
     for (let i = 0; i < elements.skill.length; i++) {
         elements.skillCv.insertAdjacentHTML('beforeend', `<li>${elements.skill[i].value}</li>`);
     }
@@ -212,7 +241,7 @@ function generateUniqueUrl(user: string): string {
 
 function resumeEdit() {
     elements.resumeOutput.style.display = 'none';
-    elements.resumeWrapper.style.display='none';
+    elements.resumeWrapper.style.display = 'none';
     elements.resumeBuild.style.display = 'flex';
     elements.editPanel.style.display = 'none';
     elements.buttons.style.display = 'none';
@@ -240,7 +269,7 @@ function addjob() {
 function resumePanel() {
     document.body.style.flexDirection = 'row'
     // elements.editPanel.style.display = 'flex';
-    if(screen.width <= 768) {
+    if (screen.width <= 768) {
         elements.editPanel.style.display = 'none';
         elements.editPanelMob.style.display = 'flex';
         for (let i = 0; i < elements.icons.length; i++) {
@@ -248,7 +277,7 @@ function resumePanel() {
                 elements.icons[i].classList.add('active')
                 elements.options[i].classList.add('open')
                 elements.options[i].scrollIntoView()
-        
+                console.log("site ok 3")
                 for (let j = 0; j < elements.icons.length; j++) {
                     if (i != j) {
                         elements.icons[j].classList.remove('active');
@@ -256,70 +285,73 @@ function resumePanel() {
                     }
                 }
             })
+
         }
-      }else{
-          elements.editPanel.style.display = 'flex';
+        console.log("site ok 2")
+    } else {
+        elements.editPanel.style.display = 'flex';
         elements.editPanelMob.style.display = 'none';
-      }
+    }
     elements.buttons.style.display = 'none';
     // elements.zoombtn.style.display='flex'
 }
-function closeEditPanel() {
-    document.body.style.flexDirection = 'column';
-    elements.editPanel.style.display = 'none';
-    elements.buttons.style.display = 'flex';
-}
+// function closeEditPanel() {
+//     document.body.style.flexDirection = 'column';
+//     elements.editPanel.style.display = 'none';
+//     elements.buttons.style.display = 'flex';
+// }
 
 function updateBorderSize(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--border-size", `${target.value}px`);
+    console.log(target.value)
 }
 
 function updateBorderRadius(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--border-radius", `${target.value}%`);
 }
 
 function updatePrimaryColor(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--primary-color", target.value);
 }
 function updatePrimarySize(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     elements.prifontVal.innerHTML = target.value;
     document.documentElement.style.setProperty("--primary-font-size", `${target.value}px`);
 }
 function updateSecondarySize(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     elements.secfontVal.innerHTML = target.value;
     document.documentElement.style.setProperty("--secondary-font-size", `${target.value}px`);
 }
 function updatePrimarySpacing(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--primary-spacing", `${target.value}px`);
 }
 function updateSecondarySpacing(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--secondary-spacing", `${target.value}px`);
 }
 
 function updateSecondaryColor(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--secondary-color", target.value);
 }
 
 function updateBorderColor(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--border-color", target.value);
 }
 
 function updatePrimaryFontColor(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--primary-font-color", target.value);
 }
 
 function updateSecondaryFontColor(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement || null;
     document.documentElement.style.setProperty("--secondary-font-color", target.value);
 }
 
@@ -354,8 +386,8 @@ function shareResumeUrl(url: string) {
 // Initialize Event Listeners
 
 
-    
- 
+
+
 
 
 initializeEventListeners();

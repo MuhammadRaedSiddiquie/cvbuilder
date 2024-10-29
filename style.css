@@ -404,9 +404,10 @@ main {
     }
 
     .edit-option>:nth-child(even) {
-        margin-bottom: 10px;
+        margin-bottom: 30px;
         margin-top: 20px;
     }
+    
 
     .create-btn,
     .skill-btn {
@@ -461,7 +462,7 @@ main {
     }
 
     .edit-text {
-        font-size: 16px;
+        font-size: 18px;
         margin-top: 10px;
         color: #000;
     }
@@ -473,7 +474,7 @@ main {
         display: none;
         flex-direction: column;
         background-color: #fff;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         position: relative;
         overflow-y: auto;
@@ -498,10 +499,9 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 30px;
+        gap: 15px;
     }
 
-    .edit-option>:nth-child(even) {}
 
     .active {
         background-color: #fff;
@@ -536,9 +536,6 @@ main {
 
 @media (max-width: 480px) {
     .resume-container {
-        /* transform: scale(0.4); Scales down to 50% */
-        /* --scale: 0.4; */
-        /* margin-bottom: calc((var(--scale) - 2)* 100%); */
         zoom: 35%;
     }
 }
