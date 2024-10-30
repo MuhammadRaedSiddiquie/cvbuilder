@@ -315,7 +315,7 @@
             </div>
             <div
                 style="display: flex;align-items: center;justify-content: center;width: 100%;gap: 0px;flex-direction: column;">
-                <!-- <button id="downButton" class="down-btn" style="margin:10px 0;background-color:rgb(2, 68, 129);">Download</button> -->
+                <button id="downButton" class="down-btn" style="margin:10px 0;background-color:rgb(2, 68, 129);">Download</button>
             </div>
         </div>
     </div>
@@ -439,7 +439,7 @@
     </div>
     <div class="edit-option download">
         <button id="shareButtonMob" class="create-btn">SHARE</button>
-        <button id="downButton" class="down-btn"
+        <button id="downButtonMob" class="down-btn"
             style="margin:10px 0;background-color:rgb(2, 68, 129);">Download</button>
     </div>
 
@@ -452,6 +452,30 @@
         onerror="handleScriptLoadError('jsPDF')"></script>
     <script>
         document.getElementById('downButton').addEventListener('click', () => {
+            const resumeElement = document.getElementById('resumeOutput');
+            resumeElement.style.zoom = "100%"
+
+            // Use html2canvas to capture the resume output as an image
+            html2canvas(resumeElement).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+
+                // Access the jsPDF constructor correctly
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+
+                const imgWidth = 210; // A4 width in mm
+                const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
+
+                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                pdf.save('resume.pdf');
+            }).catch(error => {
+                console.error('Error generating the PDF:', error);
+            });
+            resumeElement.style.zoom = "50%"
+        });
+    </script>
+    <script>
+        document.getElementById('downButtonMob').addEventListener('click', () => {
             const resumeElement = document.getElementById('resumeOutput');
             resumeElement.style.zoom = "100%"
 
