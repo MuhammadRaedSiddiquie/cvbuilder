@@ -541,7 +541,127 @@ main {
 }
 
 @media (max-width: 480px) {
+    body{
+        height: 95vh;
+    }
     .resume-container {
         zoom: 35%;
     }
+    #resumeData {
+        padding: 20px 10px;
+        gap: 5vh;
+    }
+
+    #resumeData .fieldset {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #resumeData .fieldset legend {
+        font-size: 24px;
+    }
+
+    #resumeData .fieldset label {
+        font-size: 16px;
+    }
+
+
+    #resumeData .fieldset input[type=text],
+    #resumeData .fieldset input[type=number],
+    #resumeData .fieldset input[type=tel],
+    #resumeData .fieldset input[type=email],
+    #resumeData .fieldset input[type=date],
+    #resumeData .fieldset textarea,
+    #resumeData .fieldset select {
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .edit-option input[type=color] {
+        width: 150px;
+        min-height: 35px;
+    }
+
+    .edit-option>:nth-child(even) {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    
+
+    .create-btn,
+    .skill-btn,
+    .down-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        width: 80%;
+        margin: 10px auto;
+    }
+    .icons img {
+        width: 30px;
+    }
+    .edit-panel-mobile {
+        display: flex;
+        width: 100%;
+        height: 90px;
+        border-bottom: 2px solid #cccccc;
+        border-top: 2px solid #cccccc;
+        background-color: #fff;
+        overflow-y: scroll;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 10px;
+        padding: 0 10px;
+
+    }
+
+    .edit-panel-mobile span {
+        min-width: 50px;
+        min-height: 50px;
+        border: 3px solid #dbdbdb;
+        border-radius: 15px;
+
+    }
+
+    .edit-text {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #000;
+    }
+
+    .edit-option {
+        width: 100%;
+        height: 200px;
+        padding: 20px 10px;
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        overflow-y: auto;
+        /* margin-top: 50px; */
+        /* animation: slideup 0.5s linear forwards; */
+    }
+
+     .font-size::after{
+        content: '';
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        border: 2px solid #9E9E9E;
+        border-radius: 15px;
+        top: -80px;
+        background: white;
+    } 
+
+
+
+    .edit-option div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+
 }
