@@ -35,8 +35,6 @@
     src: url(MonumentExtended-Regular.otf);
 }
 
-
-<<<<<<< HEAD
 .preloader {
     width: 100%;
     height: 100vh;
@@ -50,10 +48,6 @@
     display: none;
 }
 
-=======
-
-/* Main Container */
->>>>>>> 3c12fc7637d44ac34302d4ca9791fd9907a9dafa
 main {
     background-color: #fff;
     width: 100%;
@@ -198,11 +192,7 @@ main {
 }
 
 .skill-btn {
-<<<<<<< HEAD
     background-color: #024481;
-=======
-    background-color:#024481;
->>>>>>> 3c12fc7637d44ac34302d4ca9791fd9907a9dafa
     color: white;
     padding: 11px 23px;
     font-family: monospace;
@@ -608,11 +598,7 @@ main {
         width: 30px;
     }
 
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 3c12fc7637d44ac34302d4ca9791fd9907a9dafa
 }
 
 @media (max-width: 480px) {
