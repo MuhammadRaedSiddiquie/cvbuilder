@@ -35,6 +35,8 @@
     src: url(MonumentExtended-Regular.otf);
 }
 
+
+
 /* Main Container */
 main {
     background-color: #fff;
@@ -180,12 +182,12 @@ main {
 }
 
 .skill-btn {
-    background-color: rgb(3, 115, 219);
+    background-color:#024481;
     color: white;
     padding: 11px 23px;
     font-family: monospace;
     font-size: 18px;
-    border-radius: 4px;
+    border-radius: 21px;
     text-align: center;
     width: 40%;
     margin: 10px 145px;
@@ -328,6 +330,16 @@ main {
     border-radius: 50%;
     border: 2px solid #cccccc;
 }
+/* @keyframes slideup {
+        from {
+            transform: translateY(-200px);
+        }
+
+        to {
+            transform: translateY(0px);
+        }
+
+    } */
 
 @media (max-width: 1024px) {
     .resume-container {
@@ -455,6 +467,7 @@ main {
         justify-content: space-evenly;
         gap: 10px;
         padding: 0 10px;
+        
 
     }
 
@@ -528,16 +541,7 @@ main {
         width: 30px;
     }
 
-    @keyframes slideup {
-        from {
-            transform: translateY(200px);
-        }
-
-        to {
-            transform: translateY(0px);
-        }
-
-    }
+    
 }
 
 @media (max-width: 480px) {

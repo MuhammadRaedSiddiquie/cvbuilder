@@ -1,5 +1,6 @@
 // Element References
 var elements = {
+    // loader: document.getElementById('preLoader') as HTMLDivElement,
     imageView: document.getElementById('imgView') || null,
     imageView2: document.getElementById('imgView2') || null,
     imageFile: document.getElementById('imgFile') || null,
@@ -94,6 +95,12 @@ var elements = {
     secondaryFontFamilyMob: document.getElementById('secFamilyMob') || null,
     shareButtonMob: document.getElementById('shareButtonMob') || null
 };
+window.addEventListener("beforeunload", function (event) {
+    console.log("UNLOAD:1");
+    //event.preventDefault();
+    event.returnValue = null; //"Any text"; //true; //false;
+    //return null; //"Any text"; //true; //false;
+});
 var resumeUrl = '';
 var skillCounter = 1;
 var eduCounter = 1;

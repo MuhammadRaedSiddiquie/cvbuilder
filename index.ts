@@ -1,5 +1,7 @@
 // Element References
+
 const elements = {
+    // loader: document.getElementById('preLoader') as HTMLDivElement,
     imageView: document.getElementById('imgView') as HTMLDivElement || null,
     imageView2: document.getElementById('imgView2') as HTMLDivElement || null,
     imageFile: document.getElementById('imgFile') as HTMLInputElement || null,
@@ -97,6 +99,14 @@ const elements = {
 
 
 };
+
+
+window.addEventListener("beforeunload", function(event) {
+    console.log("UNLOAD:1");
+    //event.preventDefault();
+    event.returnValue = null; //"Any text"; //true; //false;
+    //return null; //"Any text"; //true; //false;
+  });
 
 let resumeUrl = '';
 let skillCounter = 1;
