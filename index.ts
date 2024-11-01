@@ -1,7 +1,11 @@
 // Element References
 
 const elements = {
+<<<<<<< HEAD
     loader: document.getElementById('preLoader2') as HTMLDivElement,
+=======
+    // loader: document.getElementById('preLoader') as HTMLDivElement,
+>>>>>>> 3c12fc7637d44ac34302d4ca9791fd9907a9dafa
     imageView: document.getElementById('imgView') as HTMLDivElement || null,
     imageView2: document.getElementById('imgView2') as HTMLDivElement || null,
     imageFile: document.getElementById('imgFile') as HTMLInputElement || null,
@@ -163,6 +167,7 @@ function handleImageChange() {
         console.log('no files')
     }
 }
+
 function loaderFunc(){
     setTimeout(()=>{
         console.log('start')
