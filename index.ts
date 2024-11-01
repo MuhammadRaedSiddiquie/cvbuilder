@@ -1,5 +1,7 @@
 // Element References
+
 const elements = {
+    loader: document.getElementById('preLoader2') as HTMLDivElement,
     imageView: document.getElementById('imgView') as HTMLDivElement || null,
     imageView2: document.getElementById('imgView2') as HTMLDivElement || null,
     imageFile: document.getElementById('imgFile') as HTMLInputElement || null,
@@ -98,6 +100,14 @@ const elements = {
 
 };
 
+
+window.addEventListener("beforeunload", function(event) {
+    console.log("UNLOAD:1");
+    //event.preventDefault();
+    event.returnValue = null; //"Any text"; //true; //false;
+    //return null; //"Any text"; //true; //false;
+  });
+
 let resumeUrl = '';
 let skillCounter = 1;
 let eduCounter = 1;
@@ -146,33 +156,46 @@ function handleImageChange() {
         const imgLink = URL.createObjectURL(elements.imageFile.files[0]);
         imgLink2 = imgLink
         elements.imageView.style.backgroundImage = `url('${imgLink}')`;
+        
 
 
     } else {
-        console.log("No file selected.");
+        console.log('no files')
     }
 }
-
+function loaderFunc(){
+    setTimeout(()=>{
+        console.log('start')
+        elements.loader.style.display='none'
+        console.log('end')
+    },3000)
+}
 function resumeDisplay() {
-    //Ensure at least 3 skills are added
-    // let filledSkillsCount = 0;
-    // for (let i = 0; i < elements.skill.length; i++) {
-    //     if (elements.skill[i].value.trim() !== '') {
-    //         filledSkillsCount++;
-    //     }
-    // }
+    elements.loader.style.display='flex'
+    loaderFunc()
 
-    // if (filledSkillsCount < 3) {
-    //     alert('Please add at least 3 skills to your resume.');
-    //     return; 
-    // }
+    
+    let filledSkillsCount = 0;
+    for (let i = 0; i < elements.skill.length; i++) {
+        if (elements.skill[i].value.trim() !== '') {
+            filledSkillsCount++;
+        }
+    }
+
+    if (filledSkillsCount < 3) {
+        alert('Please add at least 3 skills to your resume.');
+        return; 
+    }
 
     elements.resumeBuild.style.display = 'none';
     elements.resumeOutput.style.display = 'flex';
     elements.buttons.style.display = 'flex';
     elements.resumeWrapper.style.display = 'flex';
     resumePanel();
+   if(elements.imageFile.files && elements.imageFile.files[0]){
     elements.imageView2.style.backgroundImage = `url('${imgLink2}')`;
+   }else{elements.imageView2.style.backgroundImage = `url('person.png')`
+   }
 
     elements.usernameCv.innerHTML = elements.username.value || '-';
     elements.collegeCv.innerHTML = elements.college.value || '-';
@@ -242,6 +265,8 @@ function generateUniqueUrl(user: string): string {
 }
 
 function resumeEdit() {
+    
+   
     elements.resumeOutput.style.display = 'none';
     elements.resumeWrapper.style.display = 'none';
     elements.resumeBuild.style.display = 'flex';

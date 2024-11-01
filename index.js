@@ -1,5 +1,6 @@
 // Element References
 var elements = {
+    loader: document.getElementById('preLoader2'),
     imageView: document.getElementById('imgView') || null,
     imageView2: document.getElementById('imgView2') || null,
     imageFile: document.getElementById('imgFile') || null,
@@ -94,6 +95,12 @@ var elements = {
     secondaryFontFamilyMob: document.getElementById('secFamilyMob') || null,
     shareButtonMob: document.getElementById('shareButtonMob') || null
 };
+window.addEventListener("beforeunload", function (event) {
+    console.log("UNLOAD:1");
+    //event.preventDefault();
+    event.returnValue = null; //"Any text"; //true; //false;
+    //return null; //"Any text"; //true; //false;
+});
 var resumeUrl = '';
 var skillCounter = 1;
 var eduCounter = 1;
@@ -141,27 +148,40 @@ function handleImageChange() {
         elements.imageView.style.backgroundImage = "url('".concat(imgLink, "')");
     }
     else {
-        console.log("No file selected.");
+        console.log('no files');
     }
 }
+function loaderFunc() {
+    setTimeout(function () {
+        console.log('start');
+        elements.loader.style.display = 'none';
+        console.log('end');
+    }, 3000);
+}
 function resumeDisplay() {
-    //Ensure at least 3 skills are added
-    // let filledSkillsCount = 0;
-    // for (let i = 0; i < elements.skill.length; i++) {
-    //     if (elements.skill[i].value.trim() !== '') {
-    //         filledSkillsCount++;
-    //     }
-    // }
-    // if (filledSkillsCount < 3) {
-    //     alert('Please add at least 3 skills to your resume.');
-    //     return; 
-    // }
+    elements.loader.style.display = 'flex';
+    loaderFunc();
+    var filledSkillsCount = 0;
+    for (var i = 0; i < elements.skill.length; i++) {
+        if (elements.skill[i].value.trim() !== '') {
+            filledSkillsCount++;
+        }
+    }
+    if (filledSkillsCount < 3) {
+        alert('Please add at least 3 skills to your resume.');
+        return;
+    }
     elements.resumeBuild.style.display = 'none';
     elements.resumeOutput.style.display = 'flex';
     elements.buttons.style.display = 'flex';
     elements.resumeWrapper.style.display = 'flex';
     resumePanel();
-    elements.imageView2.style.backgroundImage = "url('".concat(imgLink2, "')");
+    if (elements.imageFile.files && elements.imageFile.files[0]) {
+        elements.imageView2.style.backgroundImage = "url('".concat(imgLink2, "')");
+    }
+    else {
+        elements.imageView2.style.backgroundImage = "url('person.png')";
+    }
     elements.usernameCv.innerHTML = elements.username.value || '-';
     elements.collegeCv.innerHTML = elements.college.value || '-';
     elements.degreeCv.innerHTML = elements.degree.value || '-';
